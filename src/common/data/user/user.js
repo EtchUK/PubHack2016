@@ -10,10 +10,6 @@ angular.module('BecomeAHero.Data.User', [
 	var User = Restangular.service(UserResourceName);
 	
 	User.login = function(creds) {
-		var _this = this;
-		if (localStorage.user) {
-			return $q.when(JSON.parse(localStorage.user));
-		}
 		return User.get(creds).then(function(data) {
 			localStorage.user = JSON.stringify(data);
 		});
@@ -24,6 +20,9 @@ angular.module('BecomeAHero.Data.User', [
 	};
 
 	User.current = function() {
+		if (!localStorage.user) {
+			return null;
+		}
 		return JSON.parse(localStorage.user);
 	};
 /*

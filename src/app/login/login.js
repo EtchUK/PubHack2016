@@ -28,10 +28,7 @@ angular.module('BecomeAHero.Login', [
 			if (user) {
 				$state.asyncGo("app.auth.heroDashboard");
 			}
-		}],
-		data: {
-			title: "Login"
-		}
+		}]
 	});
 
 	$stateProvider.state('app.auth.logout', {
@@ -42,13 +39,9 @@ angular.module('BecomeAHero.Login', [
 			}
 		},
 		onEnter: ["$state", "User", function($state, User) {
-			User.logout().then(function() {
-				$state.asyncGo("app.login");
-			});
-		}],
-		data: {
-			title: "Logout"
-		}
+			User.logout();
+			$state.go("app.homepage");
+		}]
 	});
 })
 
@@ -58,10 +51,10 @@ angular.module('BecomeAHero.Login', [
 
 	$scope.login = login;
 
-	function login(username, password) {
+	function login(email, password) {
 		$scope.error = "";
 		User.login({
-			username: username,
+			email: email,
 			password: password
 		}).then(function() {
 			$state.go("app.auth.heroDashboard");
