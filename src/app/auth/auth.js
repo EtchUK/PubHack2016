@@ -14,7 +14,7 @@ angular.module('BecomeAHero.Auth', [
 				if (user) {
 					return user;
 				} else {
-					$state.go("app.login");
+					$state.asyncGo("app.homepage");
 				}
 			}]
 		},
