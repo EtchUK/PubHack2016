@@ -1,7 +1,7 @@
-angular.module('EtchBoilerplate.Register', [
+angular.module('BecomeAHero.Register', [
 	'ui.router',
-	'EtchBoilerplate.Data.User',
-	'EtchBoilerplate.PageTitle'
+	'BecomeAHero.Data.User',
+	'BecomeAHero.PageTitle'
 ])
 
 .config(function config( $stateProvider ) {
@@ -33,7 +33,7 @@ angular.module('EtchBoilerplate.Register', [
 		
 		User.post(data).then(function() {
 			User.login({ username: username, password: password }).then(function() {
-				$state.go("app.auth.home");
+				$state.go("app.auth.heroDashboard");
 			}, function(error) {
 				$scope.error = JSON.stringify(error.data.errors);
 			});

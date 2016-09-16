@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.Icon', [])
+angular.module('BecomeAHero.Icon', [])
 
 .directive('icon', function() {
 	return {

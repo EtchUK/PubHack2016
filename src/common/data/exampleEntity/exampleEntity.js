@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.Data.ExampleEntity', [
+angular.module('BecomeAHero.Data.ExampleEntity', [
 	'restangular'
 ])
 

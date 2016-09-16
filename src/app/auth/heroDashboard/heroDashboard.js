@@ -1,7 +1,7 @@
 
-angular.module('EtchBoilerplate.Auth.HeroDashboard', [
+angular.module('BecomeAHero.Auth.HeroDashboard', [
 	'ui.router',
-	'EtchBoilerplate.PageTitle'
+	'BecomeAHero.PageTitle'
 ])
 
 .config(function config( $stateProvider ) {

@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.Data.Enum', [])
+angular.module('BecomeAHero.Data.Enum', [])
 
 .factory('Enum', function() {
 	

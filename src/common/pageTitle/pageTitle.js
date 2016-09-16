@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.PageTitle', [
+angular.module('BecomeAHero.PageTitle', [
 ])
 
 .factory('PageTitle', function(){
@@ -6,7 +6,7 @@ angular.module('EtchBoilerplate.PageTitle', [
 
 	return {
 		title: function() {
-			return title ? (title + ' - EtchBoilerplate') : 'EtchBoilerplate';
+			return title ? (title + ' - BecomeAHero') : 'BecomeAHero';
 		},
 		getTitle: function() {
 			return title;

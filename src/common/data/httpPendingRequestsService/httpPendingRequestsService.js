@@ -1,5 +1,5 @@
 
-angular.module('EtchBoilerplate.Data.HttpPendingRequestsService', [
+angular.module('BecomeAHero.Data.HttpPendingRequestsService', [
 ])
 
 .service('HttpPendingRequestsService', function ($q) {

@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.Loading.Service', [
+angular.module('BecomeAHero.Loading.Service', [
 ])
 
 

@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.Data.User', [
+angular.module('BecomeAHero.Data.User', [
 	'restangular'
 ])
 

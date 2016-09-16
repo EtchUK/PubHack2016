@@ -1,7 +1,7 @@
-angular.module('EtchBoilerplate.Homepage', [
+angular.module('BecomeAHero.Homepage', [
 	'ui.router',
-	'EtchBoilerplate.Data.User',
-	'EtchBoilerplate.PageTitle'
+	'BecomeAHero.Data.User',
+	'BecomeAHero.PageTitle'
 ])
 
 .config(function config( $stateProvider ) {

@@ -1,5 +1,5 @@
 
-angular.module('EtchBoilerplate.Forms.FocusMe', [])
+angular.module('BecomeAHero.Forms.FocusMe', [])
 .directive('focusMe', function($timeout, $parse) {
 	return {
 	//scope: true,   // optionally create a child scope

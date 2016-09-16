@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.VendorOverrides.UiRouter', [
+angular.module('BecomeAHero.VendorOverrides.UiRouter', [
 	'ui.router'
 ])
 

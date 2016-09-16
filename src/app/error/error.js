@@ -1,9 +1,9 @@
 
-angular.module('EtchBoilerplate.Error', [
+angular.module('BecomeAHero.Error', [
 	'ui.router',
-	'EtchBoilerplate.Data.HttpPendingRequestsService',
-	'EtchBoilerplate.PageTitle',
-	'EtchBoilerplate.History'
+	'BecomeAHero.Data.HttpPendingRequestsService',
+	'BecomeAHero.PageTitle',
+	'BecomeAHero.History'
 ])
 
 .config(function($stateProvider) {
@@ -33,7 +33,7 @@ angular.module('EtchBoilerplate.Error', [
 		if ($state.current.error && $state.current.error.toState) {
 			$state.go($state.current.error.toState, $state.current.error.toParams);
 		} else {
-			$state.go("app.auth.home");
+			$state.go("app.homepage");
 		}
 	}
 })

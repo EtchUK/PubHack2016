@@ -1,20 +1,21 @@
-angular.module( 'EtchBoilerplate', [
+angular.module( 'BecomeAHero', [
 	'templates-app',
 	'templates-common',
 	'ui.router',
 	'ngAnimate',
 	'restangular',
-	'EtchBoilerplate.Environment',
-	'EtchBoilerplate.VendorOverrides.UiRouter',
-	'EtchBoilerplate.Loading.Interceptor',
-	'EtchBoilerplate.Loading.Service',
-	'EtchBoilerplate.History',
-	'EtchBoilerplate.Error',
-	'EtchBoilerplate.Auth',
-	'EtchBoilerplate.Login',
-	'EtchBoilerplate.Register',
-	'EtchBoilerplate.PageTitle',
-	'EtchBoilerplate.Data.User'
+	'BecomeAHero.Environment',
+	'BecomeAHero.VendorOverrides.UiRouter',
+	'BecomeAHero.Loading.Interceptor',
+	'BecomeAHero.Loading.Service',
+	'BecomeAHero.History',
+	'BecomeAHero.Error',
+	'BecomeAHero.Auth',
+	'BecomeAHero.Login',
+	'BecomeAHero.Homepage',
+	'BecomeAHero.Register',
+	'BecomeAHero.PageTitle',
+	'BecomeAHero.Data.User'
 ])
 
 
@@ -33,7 +34,7 @@ angular.module( 'EtchBoilerplate', [
 			}
 		}
 	});
-	$urlRouterProvider.otherwise('/home');
+	$urlRouterProvider.otherwise('/homepage');
 })
 
 

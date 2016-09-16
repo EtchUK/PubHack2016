@@ -1,7 +1,7 @@
-angular.module('EtchBoilerplate.Login', [
+angular.module('BecomeAHero.Login', [
 	'ui.router',
-	'EtchBoilerplate.Data.User',
-	'EtchBoilerplate.PageTitle'
+	'BecomeAHero.Data.User',
+	'BecomeAHero.PageTitle'
 ])
 
 .config(function config( $stateProvider ) {
@@ -26,7 +26,7 @@ angular.module('EtchBoilerplate.Login', [
 		},
 		onEnter: ["$state", "user", function($state, user) {
 			if (user) {
-				$state.asyncGo("app.auth.home");
+				$state.asyncGo("app.auth.heroDashboard");
 			}
 		}],
 		data: {
@@ -64,7 +64,7 @@ angular.module('EtchBoilerplate.Login', [
 			username: username,
 			password: password
 		}).then(function() {
-			$state.go("app.auth.home");
+			$state.go("app.auth.heroDashboard");
 		}, function(error) {
 			$scope.error = error.data.message;
 		});

@@ -1,4 +1,4 @@
-angular.module('EtchBoilerplate.History', [
+angular.module('BecomeAHero.History', [
 	'ui.router'
 ])
 

@@ -1,7 +1,7 @@
-angular.module('EtchBoilerplate.Data.Settings', [
+angular.module('BecomeAHero.Data.Settings', [
 	'ui.router',
 	'restangular',
-	'EtchBoilerplate.Environment'
+	'BecomeAHero.Environment'
 ])
 
 .config(function(RestangularProvider, Environment) {

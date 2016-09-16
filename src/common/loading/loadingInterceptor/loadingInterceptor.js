@@ -1,5 +1,5 @@
-angular.module('EtchBoilerplate.Loading.Interceptor', [
-	'EtchBoilerplate.Loading.Service'
+angular.module('BecomeAHero.Loading.Interceptor', [
+	'BecomeAHero.Loading.Service'
 ])
 
 .config(function($httpProvider, $injector) {
