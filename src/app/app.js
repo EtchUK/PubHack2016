@@ -56,6 +56,8 @@ angular.module( 'BecomeAHero', [
 		}
 	}
 
+	$scope.state = $state;
+
 })
 
 ;

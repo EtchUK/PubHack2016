@@ -1,0 +1,146 @@
+﻿//@import "../variables";
+//@import "../util";
+//@import "../mq";
+
+.hero-stats{
+	border:$border-width solid $dark;
+	background:$white;
+	padding:24px;
+}
+.hero-stats__profile-picture{
+	display:inline-block;
+	vertical-align:top;
+	width:20%;
+	margin-right:5%;
+	position:relative;
+
+	img{ margin-bottom:0; display:block; border-radius:5em; }
+}
+.hero-stats__level{
+	background:$hero-alt;
+	color:$white;
+	position:absolute;
+	bottom:0;
+	right:0;
+	border:$border-width solid $white;
+	width:30px;
+	height:30px;
+	border-radius:5em;
+	text-align:center;
+	font-weight:bold;
+}
+.hero-stats__profile-text{
+	width:70%;
+	vertical-align:top;
+	display:inline-block;
+}
+
+// Radial Progress - Fair warning, Adam basically woke up in a daze and found he had written this. It's a bit magic. Based on http://codepen.io/geedmo/pen/InFfd
+$progressRadialBarWarningColor: $hero-alt;
+$progressRadialBackgroundWarningColor: $white;
+$progressRadialBarColor: $hero-alt;
+$progressRadialBackgroundColor: $white;
+.profile-box__progress-radial{
+	vertical-align:top;
+	margin-right:24px;
+	display:inline-block;
+	position:relative;
+
+}
+.progress-radial {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: $white; //$progressRadialBarColor;
+  display:block;
+  overflow:hidden;
+}
+.progress-radial__overlay {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color:$white;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 16px;
+  border:2px solid $white;
+  overflow:hidden;
+}
+.progress-radial__overlay-img{
+	max-width:200%;
+	min-height:110%;
+	width:auto;
+	height:auto;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+}
+
+$step: 10; //The lower this number, the less performant this will be.
+$animStep: 1; //This one too
+
+$loops: round(100 / $step);
+$animLoops: round(100 / $animStep);
+$increment: 360 / $loops;
+$animIncrement: 360 / $animLoops;
+$half: round($loops / 2);
+$animHalf: round($animLoops / 2);
+
+//Animation version only working in Chrome currently.
+@for $i from 0 through $loops {
+	@keyframes rotate-gradient-#{$i * $step}{
+		@for $ai from 0 through $i * $step {
+			#{$ai * $animStep}%{ 
+			 	@if $ai < $animHalf {
+			      $nextdeg: 90deg + $animIncrement * $ai;
+			      background-image: -webkit-linear-gradient(90deg, $progressRadialBackgroundWarningColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $progressRadialBarWarningColor 50%, $progressRadialBackgroundWarningColor 50%, $progressRadialBackgroundWarningColor);
+			      background-image: linear-gradient(90deg, $progressRadialBackgroundWarningColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $progressRadialBarWarningColor 50%, $progressRadialBackgroundWarningColor 50%, $progressRadialBackgroundWarningColor);
+			    }
+			    @else {
+			      $nextdeg: -90deg + $animIncrement * ($ai - $animHalf);
+			      background-image: -webkit-linear-gradient($nextdeg, $progressRadialBarColor 50%, transparent 50%, transparent), linear-gradient(270deg, $progressRadialBarColor 50%, $progressRadialBackgroundColor 50%, $progressRadialBackgroundColor);
+			      background-image: linear-gradient($nextdeg, $progressRadialBarColor 50%, transparent 50%, transparent), linear-gradient(270deg, $progressRadialBarColor 50%, $progressRadialBackgroundColor 50%, $progressRadialBackgroundColor);
+			    }
+			}
+			100% {
+				@if $ai < $animHalf {
+			      $nextdeg: 90deg + $animIncrement * $ai;
+			      background-image: -webkit-linear-gradient(90deg, $progressRadialBackgroundWarningColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $progressRadialBarWarningColor 50%, $progressRadialBackgroundWarningColor 50%, $progressRadialBackgroundWarningColor);
+			      background-image: linear-gradient(90deg, $progressRadialBackgroundWarningColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $progressRadialBarWarningColor 50%, $progressRadialBackgroundWarningColor 50%, $progressRadialBackgroundWarningColor);
+			    }
+			    @else {
+			      $nextdeg: -90deg + $animIncrement * ($ai - $animHalf);
+			      background-image: -webkit-linear-gradient($nextdeg, $progressRadialBarColor 50%, transparent 50%, transparent), linear-gradient(270deg, $progressRadialBarColor 50%, $progressRadialBackgroundColor 50%, $progressRadialBackgroundColor);
+			      background-image: linear-gradient($nextdeg, $progressRadialBarColor 50%, transparent 50%, transparent), linear-gradient(270deg, $progressRadialBarColor 50%, $progressRadialBackgroundColor 50%, $progressRadialBackgroundColor);
+			    }
+			}
+		}
+	}
+	.progress-anim--#{$i * $step} {
+      animation: rotate-gradient-#{$i * $step} 2s 1 forwards;
+  	}
+  	.progress-text-#{$i * $step}{
+  		color:$hero-alt;
+  	}
+}
+//Static version
+@for $i from 0 through $loops {
+	.progress--#{$i * $step} {
+		@if $i < $half {
+		  	$nextdeg: 90deg + $increment * $i;
+		  	background-image: linear-gradient(90deg, $progressRadialBackgroundWarningColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $progressRadialBarWarningColor 50%, $progressRadialBackgroundWarningColor 50%, $progressRadialBackgroundWarningColor);
+		}
+		@else {
+		  	$nextdeg: -90deg + $increment * ($i - $half);
+		  	background-image: linear-gradient($nextdeg, $progressRadialBarColor 50%, transparent 50%, transparent), linear-gradient(270deg, $progressRadialBarColor 50%, $progressRadialBackgroundColor 50%, $progressRadialBackgroundColor);
+		}
+	}
+	.progress-text-#{$i * $step}{
+		color:$hero-alt;
+	}
+}

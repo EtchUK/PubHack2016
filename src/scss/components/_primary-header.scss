@@ -5,6 +5,31 @@
 .primary-header{
 	background:$white;
 	border:2px solid $dark;
+
+	&--hero{
+		background:$hero;
+		color:$white;
+		background:url(/assets/png/hero-bg.png) 0 0 repeat-x $hero;
+		background-size:cover;
+	}
+	&--reporter{
+		background:$villain;
+		color:$white;
+		background:url(/assets/png/hero-bg.png) 0 0 repeat-x $villain;
+		background-size:cover;
+	}
+
+	p{
+		margin:0 12px 0 0;
+		display:inline-block;
+	}
+	.inline{
+		color:$white;
+
+		&:hover{
+			color:$offwhite;
+		}
+	}
 }
 .primary-header__inner{
 	@include clear;

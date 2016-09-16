@@ -30,12 +30,18 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 
 	$scope.missionText = missionText;
 
+	$scope.user = user;
+
+	$scope.currentMissions = user.missions;
+
 	function missionText(){
 		var texts = [
 			"Destroy the",
 			"Crush the",
 			"Defeat the",
-			"Combat"
+			"Combat",
+			"Wage war with",
+			"Engage the"
 		];
 		var randomNumber = Math.floor(Math.random()*texts.length);
 		return texts[randomNumber];

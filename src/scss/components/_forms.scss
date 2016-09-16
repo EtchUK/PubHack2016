@@ -1,0 +1,204 @@
+//// Forms
+.field-container, fieldset, .contourField{ margin-bottom:6px; position:relative; @include clear(); &.align-right{ text-align:right; } }
+label, .faux-label{ 
+	display:block; 
+	width:100%;
+	float:left;
+	padding:8px 18px;
+	clear:right;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	-o-user-select: none;
+	user-select: none; 
+  font-style:italic;
+  border:2px solid $dark;
+  border-bottom:0;
+  margin-bottom:0;
+
+	.required{ color:red; }
+}
+.toggle-password-visibility{
+    cursor:pointer;
+}
+.note, .help-block{ float:right; margin-bottom:8px; color:#cccccc; display:none; @include mq($from: M){ display:block; }}
+.checkboxes, .radios, .radiobuttonlist, .checkboxlist, .checkbox{
+    font-size:14px;
+    line-height:1.2em;
+    @include clear;
+
+    label{
+        padding-left:0;
+        border:0;
+        margin-bottom:8px;
+    }
+
+    &--isolated{
+        //Isolated means it's not alongside other form elements, so no need to indent to line up
+        padding-left:0;
+    }
+}
+.checkbox{
+    label{
+        width:auto;
+        float:left;
+        line-height:20px;
+    }
+    .fieldLabel{
+        padding-top:0;
+    }
+    div{
+        float:left;
+    }
+} 
+*:focus{
+    outline: 0;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #C6D3DD;
+	  font-style:italic;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #C6D3DD;
+   opacity:  1;
+   font-style:italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #C6D3DD;
+   opacity:  1;
+   font-style:italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: #C6D3DD;
+   font-style:italic;
+}
+legend{ display:none; }
+input[type=text], textarea, input[type=email], input[type=tel], input[type=password], select {
+    border-radius:0;
+    padding: 10px 18px;
+    border:2px solid $dark;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    margin-bottom: 6px;
+    background-color:$white;
+    color:$default-text-color;
+    line-height:24px;
+    height:48px;
+    transition:border-color $transition-speed $transition-timing, background-color $transition-speed $transition-timing;
+    background-color:$white;
+
+
+    .contourField &{
+        float:left;
+    }
+    &:focus:not(:read-only) {
+        background-color:rgba($white, 0.3);
+    }
+    &.input-hp{ display:none; }
+    &.attached-to-right{
+        margin-bottom:0;
+        border-top-right-radius:0;
+        border-bottom-right-radius:0;
+        padding-right:12px;
+        border-right:0;
+
+        + .toggle-password-visibility{
+            margin-top:6px;
+        }
+    }
+    &.attached-to-left{
+        margin-bottom:0;
+        border-top-left-radius:0;
+        border-bottom-left-radius:0;
+        padding-left:12px;
+        border-left:0;
+
+        + .toggle-password-visibility{
+            margin-top:6px;
+        }
+    }
+    &.attached-to-left.attached-to-right{
+        text-align:center;
+    }
+    &.input--small{
+        padding:5px 6px;
+        height:38px;
+    }
+    &.transparent{
+        border-color:$white;
+        background:transparent;
+        background:rgba(0,0,0,0.1);
+        color:$white;
+
+        &:focus{
+            border-color:$white;
+            background:rgba(0,0,0,0.2);
+        }
+    }
+}
+input[type=text], textarea, input[type=email], input[type=tel], input[type=password]{
+    &:-moz-read-only { /* For Firefox */
+        cursor:default;
+        background:$offwhite;
+    }
+    &:read-only { 
+        cursor:default;
+        background:$offwhite;
+    }
+}
+
+select{
+    padding-right:30px;
+    line-height:22px;
+}
+input[type=submit]{
+	float:right;
+}
+input[type=radio], input[type=checkbox]{
+	float:left;
+	margin-right:6px !important;
+	clear:left;
+}
+input[type=password]{
+	@include respond-to(old-ie){
+		font-family:Arial, sans-serif;
+	}
+}
+span.field-validation-error, input.input-validation-error, textarea.input-validation-error{
+	color:red;
+	border-color:red;
+}
+span.field-validation-error{
+  margin:0 $horizontal-space;
+}
+span.field-validation-error{
+	display:block;
+	clear:both;
+}
+.validation-summary-errors{
+    color:red;
+    font-weight:bold;
+    margin-bottom:$vertical-space;
+}
+input.input-validation-error, textarea.input-validation-error{ background:#fdf1f1; }
+//Recaptcha fixes
+.recaptchatable input[type=text]{
+    line-height:18px !important;
+}
+#recaptcha_area, #recaptcha_table {
+    table-layout:auto !important;
+ }
+.recaptcha_is_showing_audio embed { height: 0; width: 0; }
+#recaptcha_area input[type="text"] {
+  display: inline-block !important;
+  height: auto !important;
+}
+#recaptcha_table td{
+    line-height: normal;
+}
+.contourNavigation{
+    text-align:center;
+}

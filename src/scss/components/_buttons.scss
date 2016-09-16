@@ -53,9 +53,11 @@ a.btn--secondary, input.btn--secondary, button.btn--secondary, .btn--secondary >
     @extend .btn;
     border-color:$dark;
     color:$hero-alt;
+    background:$white;
 
     &:hover{
-
+        border-color:lighten($dark, $color-offset);
+        color:lighten($hero-alt, $color-offset);
     }
 }
 a.btn--tertiary, input.btn--tertiary, button.btn--tertiary, .btn--tertiary > a, .contour .btn.tertiary{
