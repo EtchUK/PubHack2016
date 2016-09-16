@@ -44,7 +44,7 @@
 			<h2>Current Missions</h2>
 			<ul class="current-missions__list">
 				<li class="current-missions__list-item" ng-repeat="mission in currentMissions" ui-sref="app.villainDetail({id: mission.villain.id})">
-					<span class="current-missions__icon"><img src="http://placehold.it/200x200" /></span>
+					<span class="current-missions__icon"><img ng-src="/assets/png/{{mission.villain.villainCategoryId}}.png" /></span>
 					<span class="current-missions__details">
 						<span class="current-missions__name">
 							<span ng-bind="mission.introText"></span>

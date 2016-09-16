@@ -24,6 +24,8 @@ angular.module('BecomeAHero.Auth.ReporterDashboard', [
 .controller('ReporterDashboardCtrl', function ($scope, $state, PageTitle, villains) {
 	PageTitle.setTitle("Reporter Dashboard");
 	$scope.villains = villains;
+
+	console.log(villains);
 })
 
 ;
