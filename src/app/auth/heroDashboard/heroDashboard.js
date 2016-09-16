@@ -36,9 +36,9 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 			"Crush the",
 			"Defeat the",
 			"Combat"
-		]
+		];
 		var randomNumber = Math.floor(Math.random()*texts.length);
-		return texts[randomNumber]
+		return texts[randomNumber];
 	}
 })
 
