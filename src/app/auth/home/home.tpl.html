@@ -1,7 +1,83 @@
-<header>
-    <h1 class="home-logo">EtchBoilerplate</h1>
-    <div class="home-logo" ng-if="user._current">
-        <p><span ng-bind="user._current.firstname"></span>
-        <a ui-sref="app.auth.logout">Logout</a></p>
-    </div>
+<header class="primary-header fw-container">
+	<div class="primary-header__inner constrain">
+		<a class="primary-header__logo">Become A Hero</a>
+	    <div class="primary-header__login-info" ng-if="user._current">
+	        <p>Welcome back, <span ng-bind="user._current.firstname"></span>
+	        <a ui-sref="app.auth.logout">Logout</a></p>
+	    </div>
+	</div>
 </header>
+<div class="main-area fw-container">
+	<div class="main-area__inner constrain">
+		<div class="hero-leaderboard">
+			<h3>Your stats</h3>
+
+		</div>
+		<div class="available-villains">
+			<h3>Villains</h3>
+			<ul class="available-villains__list">
+				<li>
+					<span class="available-villains__icon"><img src="http://placehold.it/100x100" /></span>
+					<span class="available-villains__details">
+						<span class="available-villains__name">Litter (Southampton Common)</span>
+						<span class="available-villains__meta">Reported by: G Smith</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- Actual homepage, this is more like a dashboard -->
+<!--<header class="primary-header fw-container">
+	<div class="primary-header__inner constrain">
+		<a class="primary-header__logo">Become A Hero</a>
+	    <div class="primary-header__login-info" ng-if="user._current">
+	        <p>Welcome back, <span ng-bind="user._current.firstname"></span>
+	        <a>Your Dashboard</a>
+	        <a ui-sref="app.auth.logout">Logout</a></p>
+	    </div>
+	    <div class="primary-header__signup" ng-if="!user._current">
+	        <a>Sign in</a>
+	    </div>
+	</div>
+</header>
+<div class="hero fw-container">
+	<div class="hero__inner constrain">
+		<h1>Become a hero</h1>
+		<h2>A hero starts here</h2>
+		<p>Become A Hero is all about becoming a hero in your local community. Sign up now to take on villains in your area like rogue litter, unruly gardens, and difficult tasks your senior neighbours may be struggling with. Or, join us to report issues in your neighbourhood.<p>
+		<div class="hero__btn-container">
+			<a class="btn--primary">Become a hero</a>
+			<a class="btn--secondary">Become a reporter</a>
+		</div>
+	</div>
+</div>
+<div class="main-area fw-container">
+	<div class="main-area__inner constrain">
+		<div class="hero-leaderboard">
+			<h3>Heroes</h3>
+			<ul class="hero-leaderboard__list">
+				<li>
+					<span class="hero-leaderboard__ranking">1</span>
+					<span class="hero-leaderboard__profile-picture"><img src="http://placehold.it/100x100" /></span>
+					<span class="hero-leaderboard__details">
+						<span class="hero-leaderboard__name">Mighty Max</span>
+						<span class="hero-leaderboard__meta">Last villain conquered: Unruly Gardens (Portsmouth)</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="available-villains">
+			<h3>Villains</h3>
+			<ul class="available-villains__list">
+				<li>
+					<span class="available-villains__icon"><img src="http://placehold.it/100x100" /></span>
+					<span class="available-villains__details">
+						<span class="available-villains__name">Litter (Southampton Common)</span>
+						<span class="available-villains__meta">Reported by: G Smith</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>-->
