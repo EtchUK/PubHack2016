@@ -1,0 +1,71 @@
+//@import "retina-sprites";
+
+// Set variables and spriting specific to this project.
+// Variables
+$vertical-space: 20px;
+$horizontal-space: 24px; //Also used for gutters if grid enabled
+$content-width: 94%; //Page width
+$max-content-width: 1024px; //Maximum width before it just ends up centered (Containers will extend by default)
+$border-radius: 4px;
+$transition-speed: 0.25s;
+$transition-timing:ease-in-out;
+
+// Uncomment this if your site isn't responsive. Enjoy your trip to the past!
+//$mq-responsive: false;
+
+// Responsive breakpoints, use semantic names
+$mq-breakpoints: (
+    XS:  320px,
+	S: 480px,
+	M: 720px,
+	L: 980px,
+	XL: 1024px,
+	XXL: 1280px
+);
+
+// Define the breakpoint from the $mq-breakpoints list that IE8 should get
+$mq-static-breakpoint: XL;
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+$mq-show-breakpoints: () !default;
+
+
+// Common Colours 
+$white:#ffffff;
+$green: #006150;
+$lightgreen: #6DAB24;
+$alt-green:#008765;
+$alt-green-2:#008765;
+$grey: #9B9B9B;
+$lightgrey: #D8D8D8;
+$black:#000000;
+$offwhite:#F4F4F4;
+
+// e.g Link colour, bg, text colour, hover colour, active colour
+$body-background-color:$white;
+$default-text-color: $black;
+$secondary-text-color: $white;
+$primary-highlight-color: $green;
+$secondary-highlight-color: $lightgreen;
+$default-link-color: $green;
+$hover-link-color: $lightgreen;
+
+// Fonts
+// Common font stacks should be defined in util.scss, specific ones can be named or referenced here
+$base-font: 'PT Sans', sans-serif;
+$heading-font: 'PT Sans', sans-serif;
+$alt-font: Arial,Helvetica,sans-serif;
+$base-font-size:18px;
+$base-font-lh:1.6em;
+
+%base{
+    font-size: $base-font-size;
+    line-height: $base-font-lh;
+    font-family: $base-font;
+    -webkit-font-smoothing: antialiased;
+    background-color: $body-background-color;
+    color: $default-text-color;
+    overflow-x: hidden;
+}

@@ -1,2 +1,22 @@
+// Use Grunt to generate this. Or else!
+
+// Third Party CSS
+// e.g @import "icon-font";
 @import "responsive";
+@import "mq"; //Media query goodness
+// @import "spritesmith"; //Spriting - Add images to /img/src/png-sprite before using - Usage: @include retina-sprite($icon-logo-group); (Where icon-logo = your file name)
+
+@import "font";
+
+// VARIABLES, MIXINS AND SPRITING
+@import "variables";
+@import "util";
+@import "defaults";
+
+// COMPONENTS
 @import "icons";
+@import "components/buttons";
+
+@import "components/main-area";
+
+@import "print";

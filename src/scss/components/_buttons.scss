@@ -1,0 +1,52 @@
+@import "../variables";
+//@import "../util";
+@import "../mq";
+
+.btn{
+    display:inline-block;
+    vertical-align:middle;
+    color:black;
+    border:2px solid black;
+    padding:8px 24px;
+    text-decoration:none;
+    height:auto;
+    text-align:center;
+    float:none;
+    width:100%;
+    min-height:0;
+    font-weight:bold;
+    font-size:18px;
+    line-height:20px;
+    background:transparent;
+    cursor:pointer;
+    text-transform:uppercase;
+    transition:background-color $transition-speed $transition-timing, border-color $transition-speed $transition-timing;
+    border-radius:$border-radius;
+
+    @include mq($from: M){
+        width:auto;
+
+        &.btn--fw{
+            width:100%;
+        }
+    }
+}
+a.btn--primary, input.btn--primary, button.btn--primary, .btn--primary > a, .contour .btn.primary{
+	@extend .btn;
+    background:$alt-green-2;
+    color:$white;
+    border-color:$alt-green-2;
+
+	&:hover{
+        background:$green;
+        color:$white;
+        border-color:$green;
+	}
+}
+a.btn--secondary, input.btn--secondary, button.btn--secondary, .btn--secondary > a, .contour .btn.secondary{
+  @extend .btn;
+
+	&:hover{
+
+	}
+}

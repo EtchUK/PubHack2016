@@ -1,0 +1,78 @@
+﻿@import "variables";
+//@import "util";
+
+// default styles applied to tags before any classes are applied
+// editable on a per-project basis
+
+html, body {
+    @extend %base;
+}
+h1,h2,h3,h4,h5{ 
+  font-family: $heading-font; 
+  line-height:1.2em; 
+  
+  &:first-child{
+    margin-top:0;
+  }
+}
+p{
+  margin-top:0;
+}
+a{ 
+  color:$default-link-color; 
+  text-decoration:underline;
+
+  &:hover{
+    color:$hover-link-color; 
+    text-decoration:none;
+  }
+}
+ul{ 
+  padding:0px; 
+  margin:0px; 
+  list-style-type:none; 
+}
+img{ margin-bottom:1em; }
+
+//Helper classes - Looking for text alignment, visibility, or display type? Use the current boilerplate framework classes for that! These are additions.
+.no-scroll{
+  overflow:hidden;
+}
+.clear{
+  clear:both;
+}
+.clearfix{
+  @include clear();
+}
+.unbutton{ 
+  background:transparent; 
+  padding:0; 
+  margin:0; 
+  border:0; 
+  
+  &:hover{
+    background:transparent;
+  }
+}
+
+//"Full width" Elements
+.fw-container{
+  width:100%;
+  max-width:2560px;
+  margin:auto;
+}
+//To constrain content inside a fw-container. This class should not be ON your fw-container, but an element within.
+.constrain{
+  width:$content-width;
+  max-width:$max-content-width;
+  margin:auto;
+}
+
+::selection {
+  color:$white;
+  background:$green;
+}
+::-moz-selection {
+    color:$white;
+    background:$green;
+}
