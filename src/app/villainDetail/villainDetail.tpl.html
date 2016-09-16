@@ -14,7 +14,7 @@
 
 					<button ng-if="user && user.isHero && villain.status==='open'" ng-click="acceptMission()">Accept Mission</button>
 					<button ng-if="user && user.id === villain.ownerId && villain.status==='claimed' && user.isReporter" ng-click="completeMission()">Mark as done</button>
-					<p ng-if="villain.status==='claimed'">Mission claimed by {{villain.mission[0].user.name}}</p>
+					<p ng-if="villain.status==='claimed'">Mission claimed by {{villain.missions[0].user.name}}</p>
 					<p ng-if="villain.status==='closed'">Mission complete</p>
 				</div>
 				<div class="col-xxs-12 col-s-3 text-push">
