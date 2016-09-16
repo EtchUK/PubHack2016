@@ -60,7 +60,7 @@
 							<span class="available-villains__icon"><img ng-src="/assets/png/{{villain.villainCategoryId}}.png" /></span>
 							<span class="available-villains__details">
 								<span class="available-villains__name" ng-bind="villain.title"></span>
-								<span class="available-villains__meta">Reported by: <span class="villain.owner.name"></span></span>
+								<span class="available-villains__meta">Reported by: <span ng-bind="villain.owner.name"></span></span>
 							</span>
 						</li>
 					</ul>

@@ -201,11 +201,10 @@ module.exports = function ( grunt ) {
       compile_root_assets: {
         files: [
           {
-            src: [ '**', '!readme*' ],
+            src: [ '**/*', '!readme*' ],
             dest: '<%= compile_dir %>/',
             cwd: 'src/root-assets',
-            expand: true,
-            flatten: true
+            expand: true
           }
        ]
       }

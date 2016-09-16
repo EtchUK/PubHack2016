@@ -24,7 +24,7 @@
 	<body>
 		<ng-include src="'<%= svgDefs %>'"></ng-include>
 		<header class="primary-header fw-container" 
-		ng-class='{"primary-header--hero" : state.current.name == "app.auth.heroDashboard", "primary-header--reporter" : state.current.name == "app.auth.reporterDashboard"}'>
+		ng-class='{"primary-header--hero" : user.current().isHero, "primary-header--reporter" : user.current().isReporter}'>
 			<div class="primary-header__inner constrain">
 				<a class="inline primary-header__back-link" ng-if='state.current.name != "app.homepage"' ui-sref="app.homepage" class="primary-header__logo">Home</a>
 			    <div class="primary-header__login-info" ng-if="user.current()">
