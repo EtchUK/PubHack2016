@@ -24,9 +24,13 @@ h3,h4,h5, .h3, .h4, .h5{
 }
 h1, .h1{
   font-size:31px;
+  color:$white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $dark;
+  letter-spacing:1px;
 
   @include mq($from: M){
-    font-size:62px;
+    font-size:74px;
   }
 }
 h2, .h2{

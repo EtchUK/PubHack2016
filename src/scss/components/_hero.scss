@@ -10,6 +10,12 @@
 	border-right:$border-width solid $dark;
 
 	border-bottom:$border-width solid $dark;
+
+	p{
+		padding:6px;
+		background:rgba(0,0,0,0.6);
+		border-radius:3px;
+	}
 }
 .hero__inner{
 	padding:40px 0;

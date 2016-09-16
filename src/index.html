@@ -13,13 +13,20 @@
 
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
 
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#275cfc">
+
 	</head>
 	<body>
 		<ng-include src="'<%= svgDefs %>'"></ng-include>
 		<header class="primary-header fw-container" 
 		ng-class='{"primary-header--hero" : state.current.name == "app.auth.heroDashboard", "primary-header--reporter" : state.current.name == "app.auth.reporterDashboard"}'>
 			<div class="primary-header__inner constrain">
-				<a class="inline" ui-sref="app.homepage" class="primary-header__logo">Home</a>
+				<a class="inline primary-header__back-link" ng-if='state.current.name != "app.homepage"' ui-sref="app.homepage" class="primary-header__logo">Home</a>
 			    <div class="primary-header__login-info" ng-if="user.current()">
 			        <p>Welcome back, <span ng-bind="user.current().name"></span> | 
 			        <a class="inline" ng-click="goToDashboard()">Your Dashboard</a></p>
