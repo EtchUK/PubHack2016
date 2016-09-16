@@ -39,11 +39,13 @@ angular.module( 'BecomeAHero', [
 })
 
 
-.controller('AppCtrl', function ($scope, LoadingService, User, PageTitle) {
+.controller('AppCtrl', function ($scope, LoadingService, User, PageTitle, $state) {
 
 	$scope.loading = LoadingService;
 	$scope.user = User;
 	$scope.pageTitle = PageTitle;
+
+	$scope.state = $state;
 
 })
 

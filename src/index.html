@@ -16,7 +16,8 @@
 	</head>
 	<body>
 		<ng-include src="'<%= svgDefs %>'"></ng-include>
-		<header class="primary-header fw-container">
+		<header class="primary-header fw-container" 
+		ng-class='{"primary-header--hero" : state.current.name == "app.auth.heroDashboard", "primary-header--reporter" : state.current.name == "app.auth.reporterDashboard"}'>
 			<div class="primary-header__inner constrain">
 				<a ui-sref="app.register({type: 'hero'})" class="primary-header__logo">Become A Hero</a>
 			    <div class="primary-header__login-info" ng-if="user.current()">

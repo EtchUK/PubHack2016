@@ -5,6 +5,13 @@
 .primary-header{
 	background:$white;
 	border:2px solid $dark;
+
+	&--hero{
+		background:$hero;
+	}
+	&--reporter{
+		background:$villain;
+	}
 }
 .primary-header__inner{
 	@include clear;

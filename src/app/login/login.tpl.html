@@ -2,14 +2,20 @@
 	<div class="form-area__inner constrain">
 		<h1>Login</h1>
 		<form ng-submit="login(email, password)">
-			<div class="field-container">
-				<label for="email">Your email address</label>
-				<input id="email" class="login-input" type="email" name="email" ng-model="email" required placeholder="Email">
-			</div>
-			<div class="field-container">
-				<label for="password">Your password</label>
-				<input id="password" class="login-input" type="password" name="password" ng-model="password" required placeholder="Password">
-				<p class="error" ng-if="error" ng-bind="error"></p>
+			<div class="row">
+				<div class="col-xxs-12 col-s-6">
+					<div class="field-container">
+						<label for="email">Your email address</label>
+						<input id="email" class="login-input" type="email" name="email" ng-model="email" required placeholder="Email">
+					</div>
+				</div>
+				<div class="col-xxs-12 col-s-6">
+					<div class="field-container">
+						<label for="password">Your password</label>
+						<input id="password" class="login-input" type="password" name="password" ng-model="password" required placeholder="Password">
+						<p class="error" ng-if="error" ng-bind="error"></p>
+					</div>
+				</div>
 			</div>
 			<div class="field-container">
 				<button class="btn--primary" type="submit">Login</button>
