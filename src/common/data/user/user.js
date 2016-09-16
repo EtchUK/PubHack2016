@@ -58,6 +58,10 @@ angular.module('BecomeAHero.Data.User', [
 		};
 */
 
+		entity.lastConqueredVillain = function() {
+			return _(this.missions).sortBy('completedAt').first();
+		};
+
 		return entity;
 	});
 

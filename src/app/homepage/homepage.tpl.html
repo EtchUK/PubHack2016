@@ -34,7 +34,14 @@
 							<span class="hero-leaderboard__profile-picture"><img src="http://placehold.it/100x100" /></span>
 							<span class="hero-leaderboard__details">
 								<span class="hero-leaderboard__name" ng-bind="hero.name">Mighty Max</span>
-								<span class="hero-leaderboard__meta">Last villain conquered: Unruly Gardens (Portsmouth)</span>
+								<span class="hero-leaderboard__meta">
+									<span ng-if="hero.lastConqueredVillain()">
+										Last villain conquered: <span ng-bind="hero.lastConqueredVillain()"></span>
+									</span>
+									<span ng-if="!hero.lastConqueredVillain()">
+										No villains conquered yet.
+									</span>
+								</span>
 							</span>
 						</li>
 					</ul>
@@ -45,11 +52,11 @@
 				<div class="available-villains">
 					
 					<ul class="available-villains__list">
-						<li class="available-villains__list-item">
+						<li class="available-villains__list-item" ng-repeat="villain in villains">
 							<span class="available-villains__icon"><img src="http://placehold.it/100x100" /></span>
 							<span class="available-villains__details">
-								<span class="available-villains__name">Litter (Southampton Common)</span>
-								<span class="available-villains__meta">Reported by: G Smith</span>
+								<span class="available-villains__name" ng-bind="villain.title">Litter (Southampton Common)</span>
+								<span class="available-villains__meta">Reported by: <span class="villain.owner.name">G Smith</span>
 							</span>
 						</li>
 					</ul>
