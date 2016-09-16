@@ -26,6 +26,8 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-csso');
   grunt.loadNpmTasks('grunt-notify');
+  grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-parker');
 
   /**
    * Load in our build configuration file.
