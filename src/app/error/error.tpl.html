@@ -1,0 +1,20 @@
+<div class="page-content">
+	<div class="page-main">
+
+		<header class="page-header page-header--stretch">
+
+			<div class="page-header__col page-header__col--first">
+				<icon class="icon--page-header icon--lg" name="'attention'"></icon>
+				<h1 class="page-header__title">Error</h1>
+			</div>
+
+			
+		</header>
+
+		<div>
+			<p>An error occurred while loading the page you requested{{error.message ? (" (" + error.message + ")") : ""}}.</p>
+			
+			<p>Check you are connected to the internet and try <a ng-click="retry()">reloading the page</a>.</p>
+		</div>
+	</div>
+</div>

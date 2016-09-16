@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="EtchBoilerplate" ng-controller="AppCtrl">
+	<head>
+		<title ng-bind="pageTitle.title()"></title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+		<link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+		<!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+		<script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+	</head>
+	<body>
+		<ng-include src="'<%= svgDefs %>'"></ng-include>
+
+		<div ui-view="index" autoscroll="false"></div>
+	
+		<div ng-if="user.current()">Logged in as {{user.current().name}}</div>
+		
+		<div ng-if="loadingService.isLoading()" class="loading-spinner"></div>
+
+	</body>
+</html>
+
+

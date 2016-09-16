@@ -1,0 +1,14 @@
+{
+  "name": "angular-example",
+  "version": "1.0.0",
+  "devDependencies": {
+    "angular": "~1.4.7",
+    "angular-mocks": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "angular-animate": "~1.4.7",
+    "fastclick": "~1.0.6",
+    "lodash": "~3.10.1",
+    "restangular": "~1.5.1"
+  },
+  "dependencies": {}
+}

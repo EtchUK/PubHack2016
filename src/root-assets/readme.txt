@@ -1,0 +1,1 @@
+Files in here get copied into the root build directory. Useful for favicons etc.

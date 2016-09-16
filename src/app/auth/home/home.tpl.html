@@ -1,0 +1,7 @@
+<header>
+    <h1 class="home-logo">EtchBoilerplate</h1>
+    <div class="home-logo" ng-if="user._current">
+        <p><span ng-bind="user._current.firstname"></span>
+        <a ui-sref="app.auth.logout">Logout</a></p>
+    </div>
+</header>
