@@ -15,7 +15,7 @@ angular.module('BecomeAHero.HeroDetail', [
 		},
 		resolve: {
 			hero: ["User", "$stateParams", function(User, $stateParams) {
-				return User.get($stateParams.id);
+				return User.one($stateParams.id).get();
 			}]
 		}
 	});

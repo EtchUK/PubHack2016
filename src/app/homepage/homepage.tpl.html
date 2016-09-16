@@ -30,7 +30,7 @@
 			<div class="col-xxs-12 col-s-6">
 				<div class="hero-leaderboard">
 					<ul class="hero-leaderboard__list">
-						<li class="hero-leaderboard__list-item" ng-repeat="hero in heroes">
+						<li class="hero-leaderboard__list-item" ng-repeat="hero in heroes" ui-sref="app.heroDetail({id: hero.id})">
 							<span class="hero-leaderboard__ranking" ng-bind="$index + 1"></span>
 							<span class="hero-leaderboard__profile-picture">
 								<img src="http://placehold.it/100x100" />

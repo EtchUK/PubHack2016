@@ -16,7 +16,8 @@ angular.module( 'BecomeAHero', [
 	'BecomeAHero.Login',
 	'BecomeAHero.Homepage',
 	'BecomeAHero.Register',
-	'BecomeAHero.Data.User'
+	'BecomeAHero.Data.User',
+	'BecomeAHero.HeroDetail'
 ])
 
 

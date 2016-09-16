@@ -7,15 +7,15 @@
 					<img class="progress-radial__overlay-img" src="http://placehold.it/200x200" />
 				</div>
 			</div>
-			<span class="hero-stats__level" ng-bind="user.level"></span>
+			<span class="hero-stats__level" ng-bind="hero.level"></span>
 		</div>
 		<span class="hero-stats__profile-text">
-			<h1 ng-bind="user.name"></h1>
-			<p>Member since: <span ng-bind="user.createdAt | date"></span></p>
-			<p>Total XP: <span ng-bind="user.xp"></span></p>
-			<p ng-if="user.superpower">Superpower: <span ng-bind="user.superpower"></span></p>
-			<p ng-if="user.nemesis">Nemesis: <span ng-bind="user.nemesis"></span></p>
-			<p ng-if="user.bio"><span ng-bind="user.bio"></span></p>
+			<h1 ng-bind="hero.name"></h1>
+			<p>Member since: <span ng-bind="hero.createdAt | date"></span></p>
+			<p>Total XP: <span ng-bind="hero.xp"></span></p>
+			<p ng-if="hero.superpower">Superpower: <span ng-bind="hero.superpower"></span></p>
+			<p ng-if="hero.nemesis">Nemesis: <span ng-bind="hero.nemesis"></span></p>
+			<p ng-if="hero.bio"><span ng-bind="hero.bio"></span></p>
 		</span>
 
 	</div>
@@ -23,10 +23,10 @@
 
 <div class="main-area fw-container">
 	<div class="main-area__inner constrain">	
-		<div class="current-missions" ng-if="currentMissions.length">
+		<div class="current-missions" ng-if="hero.missions.length">
 			<h2>Current Missions</h2>
 			<ul class="current-missions__list">
-				<li class="current-missions__list-item" ng-repeat="mission in currentMissions">
+				<li class="current-missions__list-item" ng-repeat="mission in hero.missions" ui-sref="app.villainDetail({id: mission.villain.id})">
 					<span class="current-missions__icon"><img ng-src="/assets/png/{{mission.villain.villainCategoryId}}.png" /></span>
 					<span class="current-missions__details">
 						<span class="current-missions__name">
