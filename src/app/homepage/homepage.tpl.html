@@ -53,7 +53,7 @@
 				<div class="available-villains">
 					
 					<ul class="available-villains__list">
-						<li class="available-villains__list-item" ng-repeat="villain in villains">
+						<li class="available-villains__list-item" ng-repeat="villain in villains" ui-sref="app.villainDetail({id: villain.id})">
 							<span class="available-villains__icon"><img src="http://placehold.it/100x100" /></span>
 							<span class="available-villains__details">
 								<span class="available-villains__name" ng-bind="villain.title"></span>
