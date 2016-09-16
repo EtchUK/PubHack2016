@@ -46,6 +46,23 @@ angular.module('BecomeAHero.Data.Settings', [
 
 })
 
+.factory('MyRestangular', function (Restangular) {
+	return function (resourceName) {
+		var service = Restangular.service(resourceName);
+
+		service.create = function(element) {
+			return Restangular.restangularizeElement(null, element, resourceName);
+		};
+
+		service.createCollection = function(collection) {
+			return Restangular.restangularizeCollection(null, collection, resourceName);
+		};
+
+		return service;
+	};
+})
+
+
 // Service that allows responses from endpoints to be cached
 .factory('RestangularWithCaching', function(Restangular) {
 	return Restangular.withConfig(function(RestangularConfigurer) {

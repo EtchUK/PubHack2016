@@ -1,13 +1,14 @@
 angular.module('BecomeAHero.Data.Villain', [
-	'restangular'
+	'restangular',
+	'BecomeAHero.Data.Settings'
 ])
 
 // this is the name of the resource in the REST URL
 .constant('VillainResourceName', 'villains')
 
-.service('Villain', function(Restangular, VillainResourceName) {
+.service('Villain', function(MyRestangular, VillainResourceName) {
 	
-	var Villain = Restangular.service(VillainResourceName);
+	var Villain = new MyRestangular(VillainResourceName);
 
 /*
 	// static class methods

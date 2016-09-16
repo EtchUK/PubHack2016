@@ -1,20 +1,17 @@
 <div class="main-area fw-container">
 	<div class="main-area__inner constrain">
-		<div class="hero-leaderboard">
-			<h3>Your stats</h3>
-
-		</div>
 		<div class="available-villains">
 			<h3>Your Current Villains</h3>
 			<ul class="available-villains__list">
-				<li>
+				<li ng-repeat="villain in villains" ui-sref="app.villainDetail({id: villain.id})">
 					<span class="available-villains__icon"><img src="http://placehold.it/100x100" /></span>
 					<span class="available-villains__details">
-						<span class="available-villains__name">Litter (Southampton Common)</span>
-						<span class="available-villains__meta">Reported by: G Smith</span>
+						<span class="available-villains__name">{{villain.title}} ({{villain.location}})</span>
+						<span class="available-villains__meta">Reported by: {{villain.owner.name}}</span>
 					</span>
 				</li>
 			</ul>
+			<a ui-sref="app.auth.reportVillain" class="btn--tertiary"><span>Report a villain</span></a>
 		</div>
 	</div>
 </div>
