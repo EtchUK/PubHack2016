@@ -2,25 +2,33 @@
     <div class="form-area__inner constrain">
         <form ng-submit="reportVillain()">
     <h1>Register</h1>
-
-    <label for="title">Task</label>
-    <input type="text" id="title" title="title" ng-model="villain.title" required>
-
-    <label for="category">Category</label>
-    <select name="category" id="category" ng-model="villain.villainCategoryId" ng-options="category.id as category.name for category in villainCategories"></select>
-    
-    <label for="location">Location</label>
-    <input type="text" id="location" name="location" ng-model="villain.location" required>
-
-    <label for="shortDescription">Short description</label>
-    <input type="text" id="shortDescription" name="shortDescription" ng-model="villain.shortDescription" required>
+    <div class="row">
+        <div class="col-xxs-12 col-s-6">
+            <label for="title">Task</label>
+            <input type="text" id="title" title="title" ng-model="villain.title" required>
+        </div>
+        <div class="col-xxs-12 col-s-6">
+            <label for="category">Category</label>
+            <select name="category" id="category" ng-model="villain.villainCategoryId" ng-options="category.id as category.name for category in villainCategories"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xxs-12 col-s-6">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" ng-model="villain.location" required>
+        </div>
+        <div class="col-xxs-12 col-s-6">
+            <label for="shortDescription">Short description</label>
+            <input type="text" id="shortDescription" name="shortDescription" ng-model="villain.shortDescription" required>
+        </div>
+    </div>
 
     <label for="longDescription">Long description</label>
     <input type="text" id="longDescription" name="longDescription" ng-model="villain.longDescription" required>
 
     <p class="error" ng-if="error" ng-bind="error"></p>
 
-    <button type="submit">Report</button>
+    <button type="submit" class="btn--tertiary"><span>Report</span></button>
 
 </form>
 </div>

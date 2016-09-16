@@ -1,4 +1,7 @@
 //// Forms
+.form-area__inner{
+    padding:12px 0;
+}
 .field-container, fieldset, .contourField{ margin-bottom:6px; position:relative; @include clear(); &.align-right{ text-align:right; } }
 label, .faux-label{ 
 	display:block; 
