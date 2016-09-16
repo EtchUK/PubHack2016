@@ -29,7 +29,7 @@ angular.module('BecomeAHero.Register', [
 			password: password,
 			name: name,
 			isHero: $stateParams.type === "hero",
-			isReporter: $stateParams.type === "reporter",
+			isReporter: $stateParams.type !== "hero",
 			createdAt: new Date().toISOString()
 		};
 		

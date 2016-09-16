@@ -28,7 +28,7 @@ angular.module('BecomeAHero.VillainDetail', [
 	});
 })
 
-.controller('VillainDetailCtrl', function ($scope, $state, PageTitle, villain, Mission, user) {
+.controller('VillainDetailCtrl', function ($scope, $state, PageTitle, villain, Mission, user, $http) {
 	PageTitle.setTitle(villain.name);
 
 	$scope.villain = villain;
@@ -47,7 +47,7 @@ angular.module('BecomeAHero.VillainDetail', [
 	}
 
 	function completeMission() {
-		Mission.create(villains.missions[0]).customPOST('complete').then(function() {
+		$http.post("http://pubhack2016api.azurewebsites.net/api/missions/" + villain.missions[0].id + "/complete").then(function() {
 			$state.go("app.auth.reporterDashboard");
 		});
 	}

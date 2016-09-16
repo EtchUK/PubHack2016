@@ -15,8 +15,10 @@ angular.module('BecomeAHero.Data.User', [
 			var user = users.plain()[0];
 			if (user) {
 				User.setCurrent(user);
+				return user;
+			} else {
+				return $q.reject("Failed login");
 			}
-			return user;
 		});
 	};
 

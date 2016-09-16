@@ -47,7 +47,7 @@ angular.module('BecomeAHero.Login', [
 				$state.go("app.auth.reporterDashboard");
 			}
 		}, function(error) {
-			$scope.error = error.data.message;
+			$scope.error = error;
 		});
 	}
 })
