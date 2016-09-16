@@ -1,6 +1,6 @@
 <div class="main-area fw-container">
 	<div class="main-area__inner constrain">
-		<div class="current-missions" ng-if="currentMissions.length">
+		<div class="current-missions" ng-if="villains.length">
 			<h2>Your Reported Villains</h2>
 			<ul class="current-missions__list">
 				<li class="current-missions__list-item" ng-repeat="villain in villains" ui-sref="app.villainDetail({id: villain.id})">
@@ -14,6 +14,10 @@
 					</span>
 				</li>
 			</ul>
+			<a ui-sref="app.auth.reportVillain" class="btn--tertiary"><span>Report a villain</span></a>
+		</div>
+		<div class="current-missions" ng-if="!villains.length">
+			<h2>No villains yet</h2>
 			<a ui-sref="app.auth.reportVillain" class="btn--tertiary"><span>Report a villain</span></a>
 		</div>
 	</div>
