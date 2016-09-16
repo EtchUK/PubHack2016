@@ -1,17 +1,47 @@
 <div class="main-area fw-container">
 	<div class="main-area__inner constrain">
-		<div class="hero-leaderboard">
-			<h3>Your stats</h3>
-
+		<h1 ng-bind="user.name"></h1>
+		<div class="row">
+			<div class="col-xxs-12 col-s-6">
+				<div class="hero-stats">
+					<span class="hero-stats__profile-picture">
+						<img src="http://placehold.it/200x200" />
+						<span class="hero-stats__level">5</span>
+					</span>
+					<span class="hero-stats__profile-text">
+						<h2>Your stats</h2>
+						<p>XP to next level: </p>
+						<p>Superpower: Electric Dance Moves</p>
+						<p>Member since: 16th Sept 2016</p>
+					</span>
+				</div>
+			</div>
+			<div class="col-xxs-12 col-s-6">
+				<div class="current-missions">
+					<h2>Current Missions</h2>
+					<ul class="current-missions__list">
+						<li class="current-missions__list-item" ng-repeat="villain in availableVillains">
+							<span class="current-missions__icon"><img src="http://placehold.it/200x200" /></span>
+							<span class="current-missions__details">
+								<span class="current-missions__name">
+									<span ng-bind="missionText"></span>
+									<span ng-bind="villain.title"></span>
+								</span>
+								<span class="current-missions__meta">Reported by: <span class="villain.owner.name">G Smith</span></span>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<div class="available-villains">
-			<h3>Villains</h3>
+		<div class="available-villains" ng-if="availableVillains.length">
+			<h2>Available Missions</h2>
 			<ul class="available-villains__list">
-				<li class="available-villains__list-item">
-					<span class="available-villains__icon"><img src="http://placehold.it/100x100" /></span>
+				<li class="available-villains__list-item" ng-repeat="villain in availableVillains">
+					<span class="available-villains__icon"><img src="http://placehold.it/200x200" /></span>
 					<span class="available-villains__details">
-						<span class="available-villains__name">Litter (Southampton Common)</span>
-						<span class="available-villains__meta">Reported by: G Smith</span>
+						<span class="available-villains__name" ng-bind="villain.title">Litter (Southampton Common)</span>
+						<span class="available-villains__meta">Reported by: <span class="villain.owner.name">G Smith</span>
 					</span>
 				</li>
 			</ul>
