@@ -35,3 +35,16 @@
 	display:block;
 	line-height:1.2em;
 }
+.available-villains__search{
+	border:0;
+	border-bottom:$border-width solid $villain-alt;
+	background:transparent;
+	font-size:20px;
+	font-weight:bold;
+	height:3em;
+
+	&:focus{
+		outline:0;
+		border-bottom-color:$villain;
+	}
+}

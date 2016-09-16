@@ -22,26 +22,26 @@
 
 <div class="main-area fw-container">
 	<div class="main-area__inner constrain">	
-		<div class="current-missions" ng-if="currentMissions">
-				<h2>Current Missions</h2>
-				<ul class="current-missions__list">
-					<li class="current-missions__list-item" ng-repeat="mission in currentMissions">
-						<span class="current-missions__icon"><img src="http://placehold.it/200x200" /></span>
-						<span class="current-missions__details">
-							<span class="current-missions__name">
-								<span ng-bind="missionText"></span>
-								<span ng-bind="mission.villain.title"></span>
-							</span>
-							<span class="current-missions__meta">Reported by: <span class="mission.villain.owner.name">G Smith</span></span>
+		<div class="current-missions" ng-if="currentMissions.length">
+			<h2>Current Missions</h2>
+			<ul class="current-missions__list">
+				<li class="current-missions__list-item" ng-repeat="mission in currentMissions">
+					<span class="current-missions__icon"><img src="http://placehold.it/200x200" /></span>
+					<span class="current-missions__details">
+						<span class="current-missions__name">
+							<span ng-bind="missionText"></span>
+							<span ng-bind="mission.villain.title"></span>
 						</span>
-					</li>
-				</ul>
-			</div>
+						<span class="current-missions__meta">Reported by: <span class="mission.villain.owner.name">G Smith</span></span>
+					</span>
+				</li>
+			</ul>
 		</div>
 		<div class="available-villains" ng-if="availableVillains.length">
 			<h2>Available Missions</h2>
+			<input class="available-villains__search" ng-model="searchText" placeholder="Search for villains..." />
 			<ul class="available-villains__list">
-				<li class="available-villains__list-item" ng-repeat="villain in availableVillains">
+				<li class="available-villains__list-item" ng-repeat="villain in availableVillains | filter:searchText">
 					<span class="available-villains__icon"><img src="http://placehold.it/200x200" /></span>
 					<span class="available-villains__details">
 						<span class="available-villains__name" ng-bind="villain.title">Litter (Southampton Common)</span>
