@@ -14,6 +14,10 @@
 					</span>
 				</li>
 			</ul>
+			<a ui-sref="app.auth.reportVillain" class="btn--tertiary"><span>Report a villain</span></a>
+		</div>
+		<div class="current-missions" ng-if="!villains.length">
+			<h2>No villains yet</h2>
 		</div>
 		<a ui-sref="app.auth.reportVillain" class="btn--tertiary"><span>Report a villain</span></a>
 	</div>

@@ -38,7 +38,7 @@ angular.module('BecomeAHero.Data.User', [
 		if (!_current) {
 			_current = JSON.parse(localStorage.getItem("user"));
 		}
-		return _current;
+		return _current ? User.create(_current) : null;
 	};
 /*
 	// static class methods
