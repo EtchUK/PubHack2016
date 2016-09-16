@@ -30,6 +30,10 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 
 	$scope.missionText = missionText;
 
+	$scope.user = user;
+
+	$scope.currentMissions = user.missions;
+
 	function missionText(){
 		var texts = [
 			"Destroy the",

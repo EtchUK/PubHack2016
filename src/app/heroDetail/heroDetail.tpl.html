@@ -1,7 +1,7 @@
 <div class="hero-stats fw-container">
 	<div class="hero-stats__inner">
 		<div class="profile-box__progress-radial">
-			<div class="progress-radial progress--50">
+			<div class="progress-radial progress--{{user.progressToNextLevelAsPercent()}}">
 				<!-- --20 all the way through to --100 -->
 				<div class="progress-radial__overlay">
 					<img class="progress-radial__overlay-img" src="http://placehold.it/200x200" />
@@ -10,7 +10,7 @@
 			<span class="hero-stats__level">5</span>
 		</div>
 		<span class="hero-stats__profile-text">
-			<h1 ng-bind="user.name"></h1>
+			<h1 ng-bind="user.name">{{hero.name}}</h1>
 			<p>Member since: <span ng-bind="user.createdA | date"></span></p>
 			<p>Bio text</p>
 			<p>Superpower: <span ng-bind="user.superpower"></span></p>

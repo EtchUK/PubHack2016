@@ -1,5 +1,5 @@
 <div class="hero-stats fw-container">
-	<div class="hero-stats__inner">
+	<div class="hero-stats__inner constrain">
 		<div class="profile-box__progress-radial">
 			<div class="progress-radial progress--50">
 				<!-- --20 all the way through to --100 -->
@@ -7,12 +7,12 @@
 					<img class="progress-radial__overlay-img" src="http://placehold.it/200x200" />
 				</div>
 			</div>
-			<span class="hero-stats__level">5</span>
+			<span class="hero-stats__level" ng-bind="user.level"></span>
 		</div>
 		<span class="hero-stats__profile-text">
 			<h1 ng-bind="user.name"></h1>
 			<p>Member since: <span ng-bind="user.createdA | date"></span></p>
-			<p>Bio text</p>
+			<p>Total XP: <span ng-bind="user.xp"></span></p>
 			<p>Superpower: <span ng-bind="user.superpower"></span></p>
 			<p>Nemesis: Unruly Gardens</p>
 		</span>
@@ -25,14 +25,14 @@
 		<div class="current-missions" ng-if="currentMissions">
 				<h2>Current Missions</h2>
 				<ul class="current-missions__list">
-					<li class="current-missions__list-item" ng-repeat="villain in currentMissions">
+					<li class="current-missions__list-item" ng-repeat="mission in currentMissions">
 						<span class="current-missions__icon"><img src="http://placehold.it/200x200" /></span>
 						<span class="current-missions__details">
 							<span class="current-missions__name">
 								<span ng-bind="missionText"></span>
-								<span ng-bind="villain.title"></span>
+								<span ng-bind="mission.villain.title"></span>
 							</span>
-							<span class="current-missions__meta">Reported by: <span class="villain.owner.name">G Smith</span></span>
+							<span class="current-missions__meta">Reported by: <span class="mission.villain.owner.name">G Smith</span></span>
 						</span>
 					</li>
 				</ul>
@@ -46,6 +46,7 @@
 					<span class="available-villains__details">
 						<span class="available-villains__name" ng-bind="villain.title">Litter (Southampton Common)</span>
 						<span class="available-villains__meta">Reported by: <span class="villain.owner.name">G Smith</span>
+						<span class="available-villains__meta" ng-bind="villain.shortDescription"></span>
 					</span>
 				</li>
 			</ul>

@@ -3,7 +3,8 @@
 //@import "../mq";
 
 .hero{
-	background:$hero;
+	background:url(/assets/png/hero-bg.png) center center repeat-x $hero;
+	background-size:cover;
 	color:$secondary-text-color;
 	border-left:$border-width solid $dark;
 	border-right:$border-width solid $dark;

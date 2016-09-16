@@ -76,6 +76,11 @@ angular.module('BecomeAHero.Data.User', [
 			return _(this.missions).sortBy('completedAt').first();
 		};
 
+		entity.progressToNextLevelAsPercent = function(){
+			//Todo turn 'xp to next level' into a percentage and return
+			return 50;
+		};
+
 		return entity;
 	});
 

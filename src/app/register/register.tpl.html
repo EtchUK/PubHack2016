@@ -1,19 +1,24 @@
-<form ng-submit="register(email, password, name)">
-	<h1>Register</h1>
+<div class="form-area fw-container">
+	<div class="form-area__inner constrain">
 
-	<label for="name">Name</label>
-	<input type="text" id="name" name="name" ng-model="name" required>
+		<form ng-submit="register(email, password, name)">
+			<h1>Register</h1>
 
-	<label for="email">Email</label>
-	<input type="email" id="email" name="email" ng-model="email" required>
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name" ng-model="name" required>
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" ng-model="email" required>
 
-	<label for="password">Password</label>
-	<input type="password" id="password" name="password" ng-model="password" required>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" ng-model="password" required>
 
-	<p class="error" ng-if="error" ng-bind="error"></p>
+			<p class="error" ng-if="error" ng-bind="error"></p>
 
-	<button type="submit">Register</button>
+			<button type="submit" class="btn--primary"><span>Register</span></button>
 
-	<p><a ui-sref="app.homepage">Back to home</a></p>
+			<p><a ui-sref="app.homepage">Back to home</a></p>
 
-</form>
+		</form>
+
+	</div>
+</div>
