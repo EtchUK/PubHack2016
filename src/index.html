@@ -19,9 +19,9 @@
 		<header class="primary-header fw-container" 
 		ng-class='{"primary-header--hero" : state.current.name == "app.auth.heroDashboard", "primary-header--reporter" : state.current.name == "app.auth.reporterDashboard"}'>
 			<div class="primary-header__inner constrain">
-				<!--<a ui-sref="app.homepage" class="primary-header__logo">Become A Hero</a>-->
+				<a class="inline" ui-sref="app.homepage" class="primary-header__logo">Home</a>
 			    <div class="primary-header__login-info" ng-if="user.current()">
-			        <p>Welcome back, <span ng-bind="user.current().name"></span>
+			        <p>Welcome back, <span ng-bind="user.current().name"></span> | 
 			        <a class="inline" ng-click="goToDashboard()">Your Dashboard</a></p>
 			        <a class="btn--secondary" ui-sref="app.auth.logout"><span>Logout</span></a>
 			    </div>
