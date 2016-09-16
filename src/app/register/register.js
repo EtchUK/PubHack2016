@@ -6,7 +6,7 @@ angular.module('BecomeAHero.Register', [
 
 .config(function config( $stateProvider ) {
 	$stateProvider.state('app.register', {
-		url: '/register',
+		url: '/register?type',
 		views: {
 			"app": {
 				controller: 'RegisterCtrl',
@@ -16,7 +16,7 @@ angular.module('BecomeAHero.Register', [
 	});
 })
 
-.controller('RegisterCtrl', function ($scope, User, $state, PageTitle) {
+.controller('RegisterCtrl', function ($scope, User, $state, PageTitle, $stateParams) {
 	PageTitle.setTitle("Register");
 
 	$scope.register = register;
@@ -27,12 +27,18 @@ angular.module('BecomeAHero.Register', [
 		var data = {
 			email: email,
 			password: password,
-			name: name
+			name: name,
+			isHero: $stateParams.type === "hero",
+			isReporter: $stateParams.type === "reporter"
 		};
 		
 		User.post(data).then(function() {
 			User.login({ email: email }).then(function() {
-				$state.go("app.auth.heroDashboard");
+				if (data.isHero) {
+					$state.go("app.auth.heroDashboard");
+				} else {
+					$state.go("app.auth.reporterDashboard");
+				}
 			}, function(error) {
 				$scope.error = JSON.stringify(error.data.errors);
 			});
