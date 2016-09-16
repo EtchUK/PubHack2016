@@ -39,11 +39,22 @@ angular.module( 'BecomeAHero', [
 })
 
 
-.controller('AppCtrl', function ($scope, LoadingService, User, PageTitle) {
+.controller('AppCtrl', function ($scope, LoadingService, User, PageTitle, $state) {
 
 	$scope.loading = LoadingService;
 	$scope.user = User;
 	$scope.pageTitle = PageTitle;
+	$scope.goToDashboard = goToDashboard;
+
+
+	function goToDashboard() {
+		var user = User.current();
+		if (user.isHero) {
+			$state.go("app.auth.heroDashboard");
+		} else {
+			$state.go("app.auth.reporterDashboard");
+		}
+	}
 
 })
 

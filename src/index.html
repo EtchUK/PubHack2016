@@ -21,7 +21,7 @@
 				<a ui-sref="app.homepage" class="primary-header__logo">Become A Hero</a>
 			    <div class="primary-header__login-info" ng-if="user.current()">
 			        <p>Welcome back, <span ng-bind="user.current().name"></span>
-			        <a>Your Dashboard</a>
+			        <a ng-click="goToDashboard()">Your Dashboard</a>
 			        <a class="btn--secondary" ui-sref="app.auth.logout"><span>Logout</span></a></p>
 			    </div>
 			    <div class="primary-header__signup" ng-if="!user.current()">
