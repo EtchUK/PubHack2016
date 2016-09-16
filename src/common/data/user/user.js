@@ -25,7 +25,7 @@ angular.module('BecomeAHero.Data.User', [
 	};
 
 	User.setCurrent = function(user) {
-		_current = user;
+		_current = user.plain ? user.plain() : user;
 		if (user) {
 			localStorage.setItem("user", JSON.stringify(user));
 		} else {
@@ -38,7 +38,7 @@ angular.module('BecomeAHero.Data.User', [
 		if (!_current) {
 			_current = JSON.parse(localStorage.getItem("user"));
 		}
-		return _current;
+		return User.create(_current);
 	};
 /*
 	// static class methods

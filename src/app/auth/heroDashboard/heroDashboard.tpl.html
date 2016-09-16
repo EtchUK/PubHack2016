@@ -13,9 +13,26 @@
 			<h1 ng-bind="user.name"></h1>
 			<p>Member since: <span ng-bind="user.createdAt | date"></span></p>
 			<p>Total XP: <span ng-bind="user.xp"></span></p>
-			<p ng-if="user.superpower">Superpower: <span ng-bind="user.superpower"></span></p>
-			<p ng-if="user.nemesis">Nemesis: <span ng-bind="user.nemesis"></span></p>
-			<p ng-if="user.bio"><span ng-bind="user.bio"></span></p>
+			<div ng-if="!editMode">
+				<p ng-if="user.superpower">Superpower: <span ng-bind="user.superpower"></span></p>
+				<p ng-if="user.nemesis">Nemesis: <span ng-bind="user.nemesis"></span></p>
+				<p ng-if="user.bio"><span ng-bind="user.bio"></span></p>
+			</div>
+			<div ng-if="editMode">
+				<div class="field-container">
+					<label for="superpower">What's your superpower?</label>
+					<input id="superpower" type="text" ng-model="user.superpower" />
+				</div>
+				<div class="field-container">
+					<label for="nemesis">What kind of villains are you hunting?</label>
+					<input id="nemesis" type="text" ng-model="user.nemesis" />
+				</div>
+				<div class="field-container">
+					<label for="bio">Tell us about you</label>
+					<input id="bio" type="text" ng-model="user.bio" />
+				</div>
+			</div>
+			<a ng-click="toggleEdit()">{{editMode ? "Save":"Edit"}}</a>
 		</span>
 
 	</div>

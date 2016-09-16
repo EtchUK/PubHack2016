@@ -23,7 +23,7 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 	});
 })
 
-.controller('HeroDashboardCtrl', function ($scope, $state, PageTitle, user, availableVillains) {
+.controller('HeroDashboardCtrl', function ($scope, $state, PageTitle, user, availableVillains, User) {
 	PageTitle.setTitle("HeroDashboard");
 
 	$scope.availableVillains = availableVillains;
@@ -46,6 +46,13 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 		var randomNumber = Math.floor(Math.random()*texts.length);
 		return texts[randomNumber];
 	}
+
+	$scope.editMode = false;
+	$scope.toggleEdit = function(){
+		$scope.editMode = !$scope.editMode;
+		user.put();
+		User.setCurrent(user);
+	};
 })
 
 ;
