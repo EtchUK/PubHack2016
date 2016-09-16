@@ -29,7 +29,8 @@ angular.module('BecomeAHero.Register', [
 			password: password,
 			name: name,
 			isHero: $stateParams.type === "hero",
-			isReporter: $stateParams.type === "reporter"
+			isReporter: $stateParams.type === "reporter",
+			createdAt: new Date().toISOString()
 		};
 		
 		User.post(data).then(function() {
