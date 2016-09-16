@@ -18,6 +18,10 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 			availableVillains: ["Villain", function(Villain) {
 				return Villain.getList();
 				//TODO: Only get ones which match heroes location?
+			}],
+			user: ["User", function(User) {
+				var id = User.current().id;
+				return User.one(id).get();
 			}]
 		}
 	});
@@ -28,11 +32,12 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 
 	$scope.availableVillains = availableVillains;
 
-	$scope.missionText = missionText;
-
 	$scope.user = user;
 
 	$scope.currentMissions = user.missions;
+	user.missions.forEach(function(m) {
+		m.introText = missionText();
+	});
 
 	function missionText(){
 		var texts = [

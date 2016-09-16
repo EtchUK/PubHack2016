@@ -40,7 +40,7 @@
 								<span class="hero-leaderboard__name" ng-bind="hero.name">Mighty Max</span>
 								<span class="hero-leaderboard__meta">
 									<span ng-if="hero.lastConqueredVillain()">
-										Last villain conquered: <span ng-bind="hero.lastConqueredVillain()"></span>
+										Last villain conquered: <span ng-bind="hero.lastConqueredVillain().name"></span>
 									</span>
 									<span ng-if="!hero.lastConqueredVillain()">
 										No villains conquered yet.

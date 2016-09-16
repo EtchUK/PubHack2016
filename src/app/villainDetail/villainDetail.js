@@ -32,6 +32,7 @@ angular.module('BecomeAHero.VillainDetail', [
 	PageTitle.setTitle(villain.name);
 
 	$scope.villain = villain;
+	$scope.user = user;
 	$scope.acceptMission = acceptMission;
 	$scope.completeMission = completeMission;
 
