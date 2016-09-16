@@ -2,7 +2,8 @@ angular.module('BecomeAHero.Homepage', [
 	'ui.router',
 	'BecomeAHero.Data.User',
 	'BecomeAHero.Data.Villain',
-	'BecomeAHero.PageTitle'
+	'BecomeAHero.PageTitle',
+	'BecomeAHero.VillainDetail'
 ])
 
 .config(function config( $stateProvider ) {

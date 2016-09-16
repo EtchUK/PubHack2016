@@ -43,7 +43,7 @@
 		<div class="current-missions" ng-if="currentMissions.length">
 			<h2>Current Missions</h2>
 			<ul class="current-missions__list">
-				<li class="current-missions__list-item" ng-repeat="mission in currentMissions">
+				<li class="current-missions__list-item" ng-repeat="mission in currentMissions" ui-sref="app.villainDetail({id: mission.villain.id})">
 					<span class="current-missions__icon"><img src="http://placehold.it/200x200" /></span>
 					<span class="current-missions__details">
 						<span class="current-missions__name">
@@ -59,7 +59,7 @@
 			<h2>Available Missions</h2>
 			<input class="available-villains__search" ng-model="searchText" placeholder="Search for villains..." />
 			<ul class="available-villains__list">
-				<li class="available-villains__list-item" ng-repeat="villain in availableVillains | filter:searchText">
+				<li class="available-villains__list-item" ng-repeat="villain in availableVillains | filter:searchText" ui-sref="app.villainDetail({id: villain.id})">
 					<span class="available-villains__icon"><img src="http://placehold.it/200x200" /></span>
 					<span class="available-villains__details">
 						<span class="available-villains__name" ng-bind="villain.title">Litter (Southampton Common)</span>
