@@ -44,6 +44,17 @@ angular.module( 'BecomeAHero', [
 	$scope.loading = LoadingService;
 	$scope.user = User;
 	$scope.pageTitle = PageTitle;
+	$scope.goToDashboard = goToDashboard;
+
+
+	function goToDashboard() {
+		var user = User.current();
+		if (user.isHero) {
+			$state.go("app.auth.heroDashboard");
+		} else {
+			$state.go("app.auth.reporterDashboard");
+		}
+	}
 
 	$scope.state = $state;
 

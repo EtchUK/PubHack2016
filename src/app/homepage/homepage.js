@@ -16,7 +16,7 @@ angular.module('BecomeAHero.Homepage', [
 		},
 		resolve: {
 			heroes: ["User", function(User) {
-				return User.getList();
+				return User.getList({ heroes: true });
 			}],
 			villains: ["Villain", function(Villain) {
 				return Villain.getList();

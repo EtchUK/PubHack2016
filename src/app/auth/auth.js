@@ -1,7 +1,8 @@
 
 angular.module('BecomeAHero.Auth', [
 	'ui.router',
-	'BecomeAHero.Auth.HeroDashboard'
+	'BecomeAHero.Auth.HeroDashboard',
+	'BecomeAHero.Auth.ReporterDashboard'
 ])
 
 .config(function ($stateProvider) {
@@ -14,7 +15,7 @@ angular.module('BecomeAHero.Auth', [
 				if (user) {
 					return user;
 				} else {
-					$state.go("app.login");
+					$state.asyncGo("app.homepage");
 				}
 			}]
 		},
