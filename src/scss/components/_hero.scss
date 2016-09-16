@@ -1,0 +1,33 @@
+﻿//@import "../variables";
+//@import "../util";
+//@import "../mq";
+
+.hero{
+	background:$hero;
+	color:$secondary-text-color;
+	border-left:$border-width solid $dark;
+	border-right:$border-width solid $dark;
+
+	border-bottom:$border-width solid $dark;
+}
+.hero__inner{
+	padding:40px 0;
+	text-align:center;
+}
+.hero__title{
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: $dark;
+	font-weight:normal;
+	text-shadow:2px 3px 0px $hero-alt;
+	font-size:40px;
+	line-height:1;
+
+	@include mq($from: M){
+		font-size:80px;
+	}
+}
+.hero__content{
+	max-width:640px;
+	margin:0 auto;
+	font-size:20px;
+}

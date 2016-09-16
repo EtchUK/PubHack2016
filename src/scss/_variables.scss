@@ -4,11 +4,13 @@
 // Variables
 $vertical-space: 20px;
 $horizontal-space: 24px; //Also used for gutters if grid enabled
-$content-width: 94%; //Page width
+$content-width: 96%; //Page width
 $max-content-width: 1024px; //Maximum width before it just ends up centered (Containers will extend by default)
-$border-radius: 4px;
+$border-radius: 0px;
 $transition-speed: 0.25s;
 $transition-timing:ease-in-out;
+
+$border-width:2px;
 
 // Uncomment this if your site isn't responsive. Enjoy your trip to the past!
 //$mq-responsive: false;
@@ -34,30 +36,44 @@ $mq-show-breakpoints: () !default;
 
 // Common Colours 
 $white:#ffffff;
-$green: #006150;
-$lightgreen: #6DAB24;
-$alt-green:#008765;
-$alt-green-2:#008765;
-$grey: #9B9B9B;
-$lightgrey: #D8D8D8;
 $black:#000000;
-$offwhite:#F4F4F4;
+$offwhite:#F2F5F8;
+
+$dark:#1A2445;
+
+$hero: #275CFC;
+$hero-alt:#FF4819;
+
+$villain:#5E0789;
+$villain-alt:#1ACC84;
+
+$color-offset:10%;
+
 
 // e.g Link colour, bg, text colour, hover colour, active colour
-$body-background-color:$white;
-$default-text-color: $black;
-$secondary-text-color: $white;
-$primary-highlight-color: $green;
-$secondary-highlight-color: $lightgreen;
-$default-link-color: $green;
-$hover-link-color: $lightgreen;
+$body-background-color:$offwhite;
+$default-text-color: $dark;
+$secondary-text-color: lighten($offwhite, $color-offset);
+$primary-highlight-color: $hero;
+$secondary-highlight-color: $villain;
+$default-link-color: $hero;
+$hover-link-color: lighten($hero, $color-offset);
+
+@font-face {
+  font-family: 'Adventure';
+  src: url('/fonts/adventure.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/adventure.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/adventure.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/adventure.woff2') format('woff2'), /* Even Moderner Browsers */
+       url('/fonts/adventure.ttf')  format('truetype'); /* Safari, Android, iOS */
+  font-weight: 400;
+}
 
 // Fonts
 // Common font stacks should be defined in util.scss, specific ones can be named or referenced here
 $base-font: 'PT Sans', sans-serif;
-$heading-font: 'PT Sans', sans-serif;
-$alt-font: Arial,Helvetica,sans-serif;
-$base-font-size:18px;
+$heading-font: 'Adventure', 'PT Sans', sans-serif;
+$base-font-size:16px;
 $base-font-lh:1.6em;
 
 %base{

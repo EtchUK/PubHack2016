@@ -1,0 +1,15 @@
+﻿//@import "../variables";
+//@import "../util";
+//@import "../mq";
+
+.primary-footer{
+	background:$dark;
+	color:$secondary-text-color;
+}
+.primary-footer__inner{
+	padding:12px 0;
+}
+.primary-footer__link{
+	font-weight:normal;
+	color:$secondary-text-color;
+}

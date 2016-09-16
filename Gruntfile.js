@@ -140,11 +140,10 @@ module.exports = function ( grunt ) {
       build_root_assets: {
         files: [
           {
-            src: [ '**', '!readme*' ],
+            src: [ '**/*', '!readme*' ],
             dest: '<%= build_dir %>/',
             cwd: 'src/root-assets',
-            expand: true,
-            flatten: true
+            expand: true
           }
        ]
       },
