@@ -60,7 +60,10 @@
 			<input class="available-villains__search" ng-model="searchText" placeholder="Search for villains..." />
 			<ul class="available-villains__list">
 				<li class="available-villains__list-item" ng-repeat="villain in availableVillains | filter:searchText" ui-sref="app.villainDetail({id: villain.id})">
-					<span class="available-villains__icon"><img src="http://placehold.it/200x200" /></span>
+					<span class="available-villains__icon">
+						<img ng-src="/assets/png/{{villain.villainCategoryId}}.png" />
+						<span class="villain-bounty" ng-bind="villain.bounty"></span>
+					</span>
 					<span class="available-villains__details">
 						<span class="available-villains__name" ng-bind="villain.title">Litter (Southampton Common)</span>
 						<span class="available-villains__meta">Reported by: <span ng-bind="villain.owner.name"></span>

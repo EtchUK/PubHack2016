@@ -14,12 +14,12 @@
 	display:inline-block;
 	width:12%;
 	vertical-align:middle;
-	border:$border-width solid $dark;
-	border-radius:5em;
-	overflow:hidden;
+	
+	
+	position:relative;
 	margin-right:3%;
 
-	img{ margin-bottom:0; }
+	img{ margin-bottom:0; border-radius:5em; border:$border-width solid $dark; }
 }
 .available-villains__details{
 	display:inline-block;
