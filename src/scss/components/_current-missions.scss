@@ -8,3 +8,50 @@
 	margin-bottom:12px;
 	padding:24px;
 }
+.current-missions__list{
+	margin-bottom:24px;
+}
+.current-missions__list-item{
+	border-bottom:$border-width solid $dark;
+	background:$white;
+	padding:6px;
+	margin-bottom:6px;
+}
+.current-missions__icon{
+	display:inline-block;
+	width:12%;
+	vertical-align:middle;
+	border:$border-width solid $dark;
+	border-radius:5em;
+	overflow:hidden;
+	margin-right:3%;
+
+	img{ margin-bottom:0; }
+}
+.current-missions__details{
+	display:inline-block;
+	vertical-align:middle;
+	width:80%;
+}
+.current-missions__name{
+	display:block;
+	font-size:20px;
+	font-weight:bold
+}
+.current-missions__meta{
+	display:block;
+	line-height:1.2em;
+}
+.current-missions__search{
+	border:0;
+	border-bottom:$border-width solid $villain-alt;
+	background:transparent;
+	font-size:20px;
+	font-weight:bold;
+	height:3em;
+
+	&:focus{
+		outline:0;
+		border-bottom-color:$villain;
+	}
+}
