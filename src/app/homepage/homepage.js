@@ -32,7 +32,6 @@ angular.module('BecomeAHero.Homepage', [
 	$scope.heroes = heroes;
 	$scope.villains = villains;
 
-
 })
 
 ;

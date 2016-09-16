@@ -19,9 +19,9 @@
 		<header class="primary-header fw-container" 
 		ng-class='{"primary-header--hero" : state.current.name == "app.auth.heroDashboard", "primary-header--reporter" : state.current.name == "app.auth.reporterDashboard"}'>
 			<div class="primary-header__inner constrain">
-				<!--<a ui-sref="app.homepage" class="primary-header__logo">Become A Hero</a>-->
+				<a class="inline" ui-sref="app.homepage" class="primary-header__logo">Home</a>
 			    <div class="primary-header__login-info" ng-if="user.current()">
-			        <p>Welcome back, <span ng-bind="user.current().name"></span>
+			        <p>Welcome back, <span ng-bind="user.current().name"></span> | 
 			        <a class="inline" ng-click="goToDashboard()">Your Dashboard</a></p>
 			        <a class="btn--secondary" ui-sref="app.auth.logout"><span>Logout</span></a>
 			    </div>
@@ -33,7 +33,7 @@
 		<div ui-view="index" autoscroll="false"></div>
 		<footer class="primary-footer fw-container">
 			<div class="primary-footer__inner constrain">
-				<a class="primary-footer__link">Code of Conduct</a> | <a class="primary-footer__link">Privacy Policy</a>
+				<a class="primary-footer__link" ng-click='windowAlert("Do not be a dick")'>Code of Conduct</a> | <a ng-click='windowAlert("We own you.")' class="primary-footer__link">Privacy Policy</a>
 			</div>
 		</footer>
 		

@@ -1,13 +1,16 @@
 <div class="main-area fw-container">
 	<div class="main-area__inner constrain">
-		<div class="available-villains">
-			<h3>Your Current Villains</h3>
-			<ul class="available-villains__list">
-				<li ng-repeat="villain in villains" ui-sref="app.villainDetail({id: villain.id})">
-					<span class="available-villains__icon"><img src="http://placehold.it/100x100" /></span>
-					<span class="available-villains__details">
-						<span class="available-villains__name">{{villain.title}} ({{villain.location}})</span>
-						<span class="available-villains__meta">Reported by: {{villain.owner.name}}</span>
+		<div class="current-missions" ng-if="currentMissions.length">
+			<h2>Your Reported Villains</h2>
+			<ul class="current-missions__list">
+				<li class="current-missions__list-item" ng-repeat="villain in villains" ui-sref="app.villainDetail({id: villain.id})">
+					<span class="current-missions__icon"><img src="http://placehold.it/200x200" /></span>
+					<span class="current-missions__details">
+						<span class="current-missions__name">
+							<span ng-bind="villain.title"></span>
+							(<span ng-bind="villain.location"></span>)
+						</span>
+						<span class="current-missions__meta"><span class="villain.shortDescription"></span></span>
 					</span>
 				</li>
 			</ul>

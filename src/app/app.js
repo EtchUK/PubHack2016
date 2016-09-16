@@ -39,7 +39,7 @@ angular.module( 'BecomeAHero', [
 })
 
 
-.controller('AppCtrl', function ($scope, LoadingService, User, PageTitle, $state) {
+.controller('AppCtrl', function ($scope, LoadingService, User, PageTitle, $state, $window) {
 
 	$scope.loading = LoadingService;
 	$scope.user = User;
@@ -57,6 +57,10 @@ angular.module( 'BecomeAHero', [
 	}
 
 	$scope.state = $state;
+
+	$scope.windowAlert = function(text){
+		$window.alert(text);
+	};
 
 })
 
