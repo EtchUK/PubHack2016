@@ -6,24 +6,38 @@ angular.module('BecomeAHero.Data.User', [
 .constant('UserResourceName', 'users')
 
 .service('User', function(Restangular, UserResourceName, $q) {
-	
+	var _current = null;
 	var User = Restangular.service(UserResourceName);
 	
 	User.login = function(creds) {
-		return User.get(creds).then(function(data) {
-			localStorage.user = JSON.stringify(data);
+		return User.getList(creds).then(function(users) {
+			var user = users.plain()[0];
+			if (user) {
+				User.setCurrent(user);
+			}
+			return user;
 		});
 	};
 
-	User.logout = function(data) {
-		localStorage.user = null;
+	User.logout = function() {
+		User.setCurrent(null);
+	};
+
+	User.setCurrent = function(user) {
+		_current = user;
+		if (user) {
+			localStorage.setItem("user", JSON.stringify(user));
+		} else {
+			localStorage.removeItem("user");
+		}
+		return user;
 	};
 
 	User.current = function() {
-		if (!localStorage.user) {
-			return null;
+		if (!_current) {
+			_current = JSON.parse(localStorage.getItem("user"));
 		}
-		return JSON.parse(localStorage.user);
+		return _current;
 	};
 /*
 	// static class methods

@@ -12,23 +12,7 @@ angular.module('BecomeAHero.Login', [
 				controller: 'LoginCtrl',
 				templateUrl: 'login/login.tpl.html'
 			}
-		},
-		resolve: {
-			user: ["User", "$q", function(User, $q) {
-				var deferred = $q.defer();
-				User.getProfile().then(function(user) {
-					deferred.resolve(user);
-				}, function (error) {
-					deferred.resolve(null);
-				});
-				return deferred.promise;
-			}]
-		},
-		onEnter: ["$state", "user", function($state, user) {
-			if (user) {
-				$state.asyncGo("app.auth.heroDashboard");
-			}
-		}]
+		}
 	});
 
 	$stateProvider.state('app.auth.logout', {
@@ -56,8 +40,12 @@ angular.module('BecomeAHero.Login', [
 		User.login({
 			email: email,
 			password: password
-		}).then(function() {
-			$state.go("app.auth.heroDashboard");
+		}).then(function(user) {
+			if (user.isHero) {
+				$state.go("app.auth.heroDashboard");
+			} else {
+				$state.go("app.auth.reporterDashboard");
+			}
 		}, function(error) {
 			$scope.error = error.data.message;
 		});
