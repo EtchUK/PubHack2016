@@ -56,7 +56,7 @@
 				<div class="available-villains">
 					
 					<ul class="available-villains__list">
-						<li class="available-villains__list-item" ng-repeat="villain in villains" ui-sref="app.villainDetail({id: villain.id})">
+						<li class="available-villains__list-item" ng-repeat="villain in villains | filter:noMissions" ui-sref="app.villainDetail({id: villain.id})">
 							<span class="available-villains__icon"><img ng-src="/assets/png/{{villain.villainCategoryId}}.png" /><span class="villain-bounty" ng-bind="villain.bounty"></span></span>
 							<span class="available-villains__details">
 								<span class="available-villains__name" ng-bind="villain.title"></span>
