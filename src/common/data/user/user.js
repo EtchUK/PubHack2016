@@ -3,36 +3,28 @@ angular.module('BecomeAHero.Data.User', [
 ])
 
 // this is the name of the resource in the REST URL
-.constant('UserResourceName', 'user')
+.constant('UserResourceName', 'users')
 
-.service('User', function(Restangular, UserResourceName) {
+.service('User', function(Restangular, UserResourceName, $q) {
 	
 	var User = Restangular.service(UserResourceName);
-
-
-	User.getProfile = function() {
-		var _this = this;
-		return User.one("me").get().then(function(user) {
-			_this._current = user;
-			return user;
-		});
-	};
 	
-	User.login = function(data) {
+	User.login = function(creds) {
 		var _this = this;
-		return User.one("login").customPOST(data, "");
+		if (localStorage.user) {
+			return $q.when(JSON.parse(localStorage.user));
+		}
+		return User.get(creds).then(function(data) {
+			localStorage.user = JSON.stringify(data)
+		});
 	};
 
 	User.logout = function(data) {
-		var _this = this;
-		return User.one("logout").customPOST(data, "").then(function(data) {
-			_this._current = null;
-			return data;
-		});
+		localStorage.user = null;
 	};
 
 	User.current = function() {
-		return this._current;
+		return JSON.parse(localStorage.user);
 	};
 /*
 	// static class methods

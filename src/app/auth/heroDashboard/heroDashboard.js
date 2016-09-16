@@ -12,11 +12,13 @@ angular.module('BecomeAHero.Auth.HeroDashboard', [
 				controller: 'HeroDashboardCtrl',
 				templateUrl: 'auth/heroDashboard/heroDashboard.tpl.html'
 			}
+		},
+		resolve: {
 		}
 	});
 })
 
-.controller('HeroDashboardCtrl', function ($scope, $state, PageTitle) {
+.controller('HeroDashboardCtrl', function ($scope, $state, PageTitle, user) {
 	PageTitle.setTitle("HeroDashboard");
 })
 

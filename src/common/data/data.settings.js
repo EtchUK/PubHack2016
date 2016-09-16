@@ -7,7 +7,7 @@ angular.module('BecomeAHero.Data.Settings', [
 .config(function(RestangularProvider, Environment) {
 
 	if (Environment === "dev") {
-		RestangularProvider.setBaseUrl("https://dev.example.com/api/");
+		RestangularProvider.setBaseUrl("https://f037e715.ngrok.io/api/");
 	} else {
 		RestangularProvider.setBaseUrl("https://example.com/api/");
 	}

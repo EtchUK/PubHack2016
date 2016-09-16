@@ -10,7 +10,7 @@ angular.module('BecomeAHero.Auth', [
 		url: '',
 		resolve: {
 			user: ["User", "$state", function(User, $state) {
-				return User.getProfile()['catch'](function() {
+				return User.get()['catch'](function() {
 					$state.go("app.login");
 				});
 			}]
