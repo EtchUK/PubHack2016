@@ -4,7 +4,7 @@
 		<div class="hero-stats">
 			<div class="row">
 				<div class="col-xxs-12 col-s-9">
-					<h3>Mission Bounty: {{villain.bounty}}</h3>
+					<h3>Mission Bounty: {{villain.missions.length ? villain.missions[0].bounty : villain.bounty}}</h3>
 					<p>{{villain.shortDescription}}</p>
 
 					<ul>

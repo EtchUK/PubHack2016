@@ -31,6 +31,11 @@ angular.module('BecomeAHero.Homepage', [
 
 	$scope.heroes = heroes;
 	$scope.villains = villains;
+	$scope.noMissions = noMissions;
+
+	function noMissions(villian) {
+		return !villian.missions.length;
+	}
 
 })
 
