@@ -1,0 +1,23 @@
+<form ng-submit="reportVillain()">
+    <h1>Register</h1>
+
+    <label for="title">Task</label>
+    <input type="text" id="title" title="title" ng-model="villain.title" required>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" ng-model="villain.villainCategoryId" ng-options="category.id as category.name for category in villainCategories"></select>
+    
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" ng-model="villain.location" required>
+
+    <label for="shortDescription">Short description</label>
+    <input type="text" id="shortDescription" name="shortDescription" ng-model="villain.shortDescription" required>
+
+    <label for="longDescription">Long description</label>
+    <input type="text" id="longDescription" name="longDescription" ng-model="villain.longDescription" required>
+
+    <p class="error" ng-if="error" ng-bind="error"></p>
+
+    <button type="submit">Report</button>
+
+</form>

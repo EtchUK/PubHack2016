@@ -4,6 +4,7 @@ angular.module( 'BecomeAHero', [
 	'ui.router',
 	'ngAnimate',
 	'restangular',
+	'BecomeAHero.PageTitle',
 	'BecomeAHero.Data.Settings',
 	'BecomeAHero.Environment',
 	'BecomeAHero.VendorOverrides.UiRouter',
@@ -15,7 +16,6 @@ angular.module( 'BecomeAHero', [
 	'BecomeAHero.Login',
 	'BecomeAHero.Homepage',
 	'BecomeAHero.Register',
-	'BecomeAHero.PageTitle',
 	'BecomeAHero.Data.User'
 ])
 

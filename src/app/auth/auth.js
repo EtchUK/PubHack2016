@@ -2,7 +2,8 @@
 angular.module('BecomeAHero.Auth', [
 	'ui.router',
 	'BecomeAHero.Auth.HeroDashboard',
-	'BecomeAHero.Auth.ReporterDashboard'
+	'BecomeAHero.Auth.ReporterDashboard',
+	'BecomeAHero.Auth.ReportVillain'
 ])
 
 .config(function ($stateProvider) {

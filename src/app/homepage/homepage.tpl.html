@@ -21,7 +21,8 @@
 				<div class="villain-intro">
 					<h3>Villains</h3>
 					<p>Villains are pesky problems that need to be beaten to a pulp by our league of awesome community heroes! Maybe there's litter on a street near you, or an unruly garden that needs to be tamed? Our villains come in all shapes and sizes. Why not submit one today?</p>
-					<a ui-sref="app.register({type: 'reporter'})" class="btn--tertiary"><span>Report a villain</span></a>
+					<a ng-if="user.current() && user.current().isReporter" ui-sref="app.auth.reporterDashboard.reportVillain" class="btn--tertiary"><span>Report a villain</span></a>
+					<a ng-if="!user.current()" ui-sref="app.register({type: 'reporter'})" class="btn--tertiary"><span>Report a villain</span></a>
 				</div>
 			</div>
 		</div>

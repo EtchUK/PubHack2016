@@ -1,13 +1,14 @@
 angular.module('BecomeAHero.Data.User', [
-	'restangular'
+	'restangular',
+	'BecomeAHero.Data.Settings'
 ])
 
 // this is the name of the resource in the REST URL
 .constant('UserResourceName', 'users')
 
-.service('User', function(Restangular, UserResourceName, $q) {
+.service('User', function(MyRestangular, Restangular, UserResourceName, $q) {
 	var _current = null;
-	var User = Restangular.service(UserResourceName);
+	var User = new MyRestangular(UserResourceName);
 	
 	User.login = function(creds) {
 		return User.getList(creds).then(function(users) {
