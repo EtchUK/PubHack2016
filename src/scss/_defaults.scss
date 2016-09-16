@@ -7,12 +7,55 @@
 html, body {
     @extend %base;
 }
-h1,h2,h3,h4,h5{ 
+h1,h2, .h1, .h2{ 
   font-family: $heading-font; 
   line-height:1.2em; 
   
   &:first-child{
     margin-top:0;
+  }
+}
+h3,h4,h5, .h3, .h4, .h5{
+  line-height:1.2em; 
+  
+  &:first-child{
+    margin-top:0;
+  }
+}
+h1, .h1{
+  font-size:31px;
+
+  @include mq($from: M){
+    font-size:62px;
+  }
+}
+h2, .h2{
+  font-size:22px;
+
+  @include mq($from: M){
+    font-size:44px;
+  }
+}
+h3, .h3{
+  font-size:17px;
+
+  @include mq($from: M){
+    font-size:34px;
+  }
+}
+h4, .h4{
+  font-size:20px;
+  font-weight:normal;
+
+  @include mq($from: M){
+    font-size:24px;
+  }
+}
+h5, .h5{
+  font-size:18px;
+
+  @include mq($from: M){
+    font-size:20px;
   }
 }
 p{
@@ -21,6 +64,7 @@ p{
 a{ 
   color:$default-link-color; 
   text-decoration:underline;
+  font-weight:bold;
 
   &:hover{
     color:$hover-link-color; 
@@ -70,9 +114,14 @@ img{ margin-bottom:1em; }
 
 ::selection {
   color:$white;
-  background:$green;
+  background:$dark;
 }
 ::-moz-selection {
     color:$white;
-    background:$green;
+    background:$dark;
+}
+
+.emphasis{
+  font-weight:bold;
+  font-style:italic;
 }

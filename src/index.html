@@ -22,17 +22,17 @@
 			    <div class="primary-header__login-info" ng-if="user.current()">
 			        <p>Welcome back, <span ng-bind="user.current().firstname"></span>
 			        <a>Your Dashboard</a>
-			        <a ui-sref="app.auth.logout">Logout</a></p>
+			        <a class="btn--secondary" ui-sref="app.auth.logout"><span>Logout</span></a></p>
 			    </div>
 			    <div class="primary-header__signup" ng-if="!user.current()">
-			        <a>Sign in</a>
+			        <a class="btn--secondary"><span>Sign in</span></a>
 			    </div>
 			</div>
 		</header>
 		<div ui-view="index" autoscroll="false"></div>
 		<footer class="primary-footer fw-container">
 			<div class="primary-footer__inner constrain">
-				<a>Code of Conduct</a> | <a>Privacy Policy</a>
+				<a class="primary-footer__link">Code of Conduct</a> | <a class="primary-footer__link">Privacy Policy</a>
 			</div>
 		</footer>
 		

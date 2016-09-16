@@ -1,0 +1,11 @@
+﻿//@import "../variables";
+//@import "../util";
+//@import "../mq";
+
+.hero-intro{
+	border:$border-width solid $dark;
+	background:$white;
+	margin-bottom:12px;
+	padding:24px;
+	text-align:center;
+}

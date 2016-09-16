@@ -22,6 +22,7 @@
     text-transform:uppercase;
     transition:background-color $transition-speed $transition-timing, border-color $transition-speed $transition-timing;
     border-radius:$border-radius;
+    transform: skewX(-20deg);
 
     @include mq($from: M){
         width:auto;
@@ -30,23 +31,42 @@
             width:100%;
         }
     }
+
+    span{
+        display:inline-block;
+        transform: skewX(20deg);
+    }
 }
 a.btn--primary, input.btn--primary, button.btn--primary, .btn--primary > a, .contour .btn.primary{
 	@extend .btn;
-    background:$alt-green-2;
+    background:$hero;
     color:$white;
-    border-color:$alt-green-2;
+    border-color:$hero;
 
 	&:hover{
-        background:$green;
+        background:lighten($hero, $color-offset);
         color:$white;
-        border-color:$green;
+        border-color:lighten($hero, $color-offset);
 	}
 }
 a.btn--secondary, input.btn--secondary, button.btn--secondary, .btn--secondary > a, .contour .btn.secondary{
-  @extend .btn;
+    @extend .btn;
+    border-color:$dark;
+    color:$hero-alt;
 
-	&:hover{
+    &:hover{
 
-	}
+    }
+}
+a.btn--tertiary, input.btn--tertiary, button.btn--tertiary, .btn--tertiary > a, .contour .btn.tertiary{
+    @extend .btn;
+    background:$villain;
+    color:$white;
+    border-color:$villain;
+
+    &:hover{
+        background:lighten($villain, $color-offset);
+        color:$white;
+        border-color:lighten($villain, $color-offset);
+    }
 }

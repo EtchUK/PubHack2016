@@ -1,0 +1,45 @@
+﻿//@import "../variables";
+//@import "../util";
+//@import "../mq";
+
+.hero-leaderboard{}
+.hero-leaderboard__list{}
+.hero-leaderboard__list-item{
+	border:$border-width solid $dark;
+	background:$white;
+	padding:6px;
+	margin-bottom:6px;
+}
+.hero-leaderboard__ranking{
+	font-family:$heading-font;
+	display:inline-block;
+	vertical-align:middle;
+	font-size:30px;
+	width:10%;
+	text-align:center;
+}
+.hero-leaderboard__profile-picture{
+	display:inline-block;
+	width:12%;
+	vertical-align:middle;
+	border:$border-width solid $dark;
+	border-radius:5em;
+	overflow:hidden;
+	margin-right:3%;
+
+	img{ margin-bottom:0; }
+}
+.hero-leaderboard__details{
+	display:inline-block;
+	vertical-align:middle;
+	width:70%;
+}
+.hero-leaderboard__name{
+	display:block;
+	font-size:20px;
+	font-weight:bold
+}
+.hero-leaderboard__meta{
+	display:block;
+	line-height:1.2em;
+}

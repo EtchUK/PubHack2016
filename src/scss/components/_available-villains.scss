@@ -1,0 +1,37 @@
+﻿//@import "../variables";
+//@import "../util";
+//@import "../mq";
+
+.available-villains{}
+.available-villains__list
+.available-villains__list-item{
+	border:$border-width solid $dark;
+	background:$white;
+	padding:6px;
+	margin-bottom:6px;
+}
+.available-villains__icon{
+	display:inline-block;
+	width:12%;
+	vertical-align:middle;
+	border:$border-width solid $dark;
+	border-radius:5em;
+	overflow:hidden;
+	margin-right:3%;
+
+	img{ margin-bottom:0; }
+}
+.available-villains__details{
+	display:inline-block;
+	vertical-align:middle;
+	width:80%;
+}
+.available-villains__name{
+	display:block;
+	font-size:20px;
+	font-weight:bold
+}
+.available-villains__meta{
+	display:block;
+	line-height:1.2em;
+}

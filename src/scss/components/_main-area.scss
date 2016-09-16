@@ -3,7 +3,10 @@
 //@import "../mq";
 
 //// Main Area
-.main-area{}
+.main-area{
+	border-left:$border-width solid $dark;
+	border-right:$border-width solid $dark;
+}
 .main-area__inner{
 	padding:12px 0;
 }
