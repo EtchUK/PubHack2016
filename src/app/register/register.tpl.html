@@ -1,11 +1,8 @@
-<form ng-submit="register(email, password, firstname, lastname)">
+<form ng-submit="register(email, password, name)">
 	<h1>Register</h1>
 
-	<label for="firstname">First name</label>
-	<input type="text" id="firstname" name="firstname" ng-model="firstname" required>
-
-	<label for="lastname">Last name</label>
-	<input type="text" id="lastname" name="lastname" ng-model="lastname" required>
+	<label for="name">Name</label>
+	<input type="text" id="name" name="name" ng-model="name" required>
 
 	<label for="email">Email</label>
 	<input type="email" id="email" name="email" ng-model="email" required>

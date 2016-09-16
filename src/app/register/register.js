@@ -22,17 +22,16 @@ angular.module('BecomeAHero.Register', [
 	$scope.register = register;
 
 	
-	function register(username, password, firstname, lastname) {
+	function register(email, password, name) {
 		$scope.error = "";
 		var data = {
-			username: username,
+			email: email,
 			password: password,
-			firstname: firstname,
-			lastname: lastname
+			name: name
 		};
 		
 		User.post(data).then(function() {
-			User.login({ username: username, password: password }).then(function() {
+			User.login({ email: email }).then(function() {
 				$state.go("app.auth.heroDashboard");
 			}, function(error) {
 				$scope.error = JSON.stringify(error.data.errors);

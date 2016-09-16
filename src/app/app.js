@@ -4,6 +4,7 @@ angular.module( 'BecomeAHero', [
 	'ui.router',
 	'ngAnimate',
 	'restangular',
+	'BecomeAHero.Data.Settings',
 	'BecomeAHero.Environment',
 	'BecomeAHero.VendorOverrides.UiRouter',
 	'BecomeAHero.Loading.Interceptor',
