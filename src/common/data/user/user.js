@@ -15,7 +15,7 @@ angular.module('BecomeAHero.Data.User', [
 			return $q.when(JSON.parse(localStorage.user));
 		}
 		return User.get(creds).then(function(data) {
-			localStorage.user = JSON.stringify(data)
+			localStorage.user = JSON.stringify(data);
 		});
 	};
 
