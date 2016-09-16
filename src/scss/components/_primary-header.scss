@@ -11,24 +11,31 @@
 		color:$white;
 		background:url(/assets/png/hero-bg.png) 0 0 repeat-x $hero;
 		background-size:cover;
+		.inline{
+			color:$white;
+
+			&:hover{
+				color:$offwhite;
+			}
+		}
 	}
 	&--reporter{
 		background:$villain;
 		color:$white;
 		background:url(/assets/png/hero-bg.png) 0 0 repeat-x $villain;
 		background-size:cover;
+		.inline{
+			color:$white;
+
+			&:hover{
+				color:$offwhite;
+			}
+		}
 	}
 
 	p{
 		margin:0 12px 0 0;
 		display:inline-block;
-	}
-	.inline{
-		color:$white;
-
-		&:hover{
-			color:$offwhite;
-		}
 	}
 }
 .primary-header__inner{
