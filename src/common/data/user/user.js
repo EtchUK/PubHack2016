@@ -74,7 +74,8 @@ angular.module('BecomeAHero.Data.User', [
 */
 
 		entity.lastConqueredVillain = function() {
-			return _(this.missions).sortBy('completedAt').first();
+			console.log(this.missions);
+			return _(this.missions).sortBy('completedAt').first().villain;
 		};
 
 		entity.progressToNextLevelAsPercent = function(){
