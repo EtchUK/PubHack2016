@@ -1,7 +1,7 @@
 
 angular.module('EtchBoilerplate.Auth', [
 	'ui.router',
-	'EtchBoilerplate.Auth.Home'
+	'EtchBoilerplate.Auth.HeroDashboard'
 ])
 
 .config(function ($stateProvider) {
